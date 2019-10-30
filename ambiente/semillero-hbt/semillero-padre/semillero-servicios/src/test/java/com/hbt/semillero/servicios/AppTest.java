@@ -141,8 +141,13 @@ public class AppTest {
 	 */
 	@Test 
 	public void estadoEnumArrayPU(){
+		EstadoEnum[] arregloComparacion= {estadoEnumActivo,estadoEnumInactivo};
+		EstadoEnum arr[]= EstadoEnum.values();
+		int i=0;
+		for (EstadoEnum estado : arr) {
+			Assert.assertEquals(estado,arregloComparacion[i]);
+			i++;
+		}
 		
-		Assert.assertEquals(EstadoEnum.values(),"ACTIVO");
-		Assert.assertEquals(EstadoEnum.values(),"INACTIVO");
 	}
 }
