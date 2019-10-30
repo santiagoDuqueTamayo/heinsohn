@@ -9,6 +9,7 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
 import com.fasterxml.jackson.databind.ser.std.StaticListSerializerBase;
+import com.hbt.semillero.entidades.EstadoEnum;
 import com.hbt.semillero.entidades.TematicaEnum;
 
 /**
@@ -52,7 +53,7 @@ public class ComicDTO implements Serializable{
 	private LocalDate fechaVenta;
 	
 	//TODO
-	private String estado;
+	private EstadoEnum estadoEnum;
 	
 	private Long cantidad;
 
@@ -74,7 +75,7 @@ public class ComicDTO implements Serializable{
 	 */
 	public ComicDTO(String id, String nombre, String editorial, TematicaEnum tematica, String coleccion,
 			Integer numeroPaginas, BigDecimal precio, boolean color, String autores, LocalDate fechaVenta,
-			String estado, Long cantidad) {
+			EstadoEnum estado, Long cantidad) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -86,7 +87,7 @@ public class ComicDTO implements Serializable{
 		this.color = color;
 		this.autores = autores;
 		this.fechaVenta = fechaVenta;
-		this.estado = estado;
+		this.estadoEnum = estado;
 		this.cantidad = cantidad;
 	}
 	public ComicDTO() {
@@ -186,12 +187,12 @@ public class ComicDTO implements Serializable{
 		this.fechaVenta = fechaVenta;
 	}
 
-	public String getEstado() {
-		return estado;
+	public EstadoEnum getEstadoEnum() {
+		return estadoEnum;
 	}
 
-	public void setEstado(String estado) {
-		this.estado = estado;
+	public void setEstadoEnum(EstadoEnum estado) {
+		this.estadoEnum = estado;
 	}
 
 	public Long getCantidad() {

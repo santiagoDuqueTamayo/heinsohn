@@ -29,18 +29,20 @@ public class Comic implements Serializable {
 	 */
 	private static final long serialVersionUID = 4322034079745146450L;
 	
-	
+	/**
+	 * preguntar a la profe si acá se deben cambiar los tipos de tipoEnum y de estado
+	 */
 	private String id;
     private String nombre;
     private String editorial;
-    private String tematicaEnum;
+    private TematicaEnum tematicaEnum;
     private String coleccion;
     private Integer numeroPaginas;
     private BigDecimal precio;
     private String autores;
     private Boolean color;
     private LocalDate fechaVenta;
-    private String estadoEnum;
+    private EstadoEnum estadoEnum;
     private Long cantidad;
     
 
@@ -101,14 +103,14 @@ public class Comic implements Serializable {
 	 */
 	@Column(name="SCTEMATICA")
 	@Enumerated(value = EnumType.STRING)//para decirle que recibo un String del enum
-	public String getTematicaEnum() {
+	public TematicaEnum getTematicaEnum() {
 		return tematicaEnum;
 	}
 	/**
 	 * Metodo encargado de modificar el valor del atributo tematicaEnum
 	 * @param tematicaEnum El nuevo tematicaEnum a modificar.
 	 */
-	public void setTematicaEnum(String tematicaEnum) {
+	public void setTematicaEnum(TematicaEnum tematicaEnum) {
 		this.tematicaEnum = tematicaEnum;
 	}
 	/**
@@ -190,6 +192,7 @@ public class Comic implements Serializable {
 	 * Metodo encargado de retornar el valor del atributo fechaVenta
 	 * @return El fechaVenta asociado a la clase
 	 */
+	@Column(name = "SCFECHA_VENTA")
 	public LocalDate getFechaVenta() {
 		return fechaVenta;
 	}
@@ -204,20 +207,22 @@ public class Comic implements Serializable {
 	 * Metodo encargado de retornar el valor del atributo estadoEnum
 	 * @return El estadoEnum asociado a la clase
 	 */
-	public String getEstadoEnum() {
+	@Column(name = "SCESTADO")
+	public EstadoEnum getEstadoEnum() {
 		return estadoEnum;
 	}
 	/**
 	 * Metodo encargado de modificar el valor del atributo estadoEnum
 	 * @param estadoEnum El nuevo estadoEnum a modificar.
 	 */
-	public void setEstadoEnum(String estadoEnum) {
+	public void setEstadoEnum(EstadoEnum estadoEnum) {
 		this.estadoEnum = estadoEnum;
 	}
 	/**
 	 * Metodo encargado de retornar el valor del atributo cantidad
 	 * @return El cantidad asociado a la clase
 	 */
+	@Column(name = "SCCANTIDAD")
 	public Long getCantidad() {
 		return cantidad;
 	}
