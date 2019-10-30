@@ -47,4 +47,8 @@ public class AppTest {
 	public void invertirCadenaPU(String cadenaEntrante, String cadenaSalida ) {
 		Assert.assertEquals(invertirCadena(cadenaEntrante),cadenaSalida);
 	}
+	//TODO
+	/**
+	 * Pediente hacer un método que use el método ToString de la entidad COMIC
+	 */
 }
