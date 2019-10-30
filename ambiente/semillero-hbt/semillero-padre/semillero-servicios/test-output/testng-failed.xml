@@ -5,6 +5,7 @@
     <classes>
       <class name="com.hbt.semillero.servicios.AppTest">
         <methods>
+          <include name="beforeTest"/>
           <include name="invertirCadenaPU" invocation-numbers="1"/>
         </methods>
       </class> <!-- com.hbt.semillero.servicios.AppTest -->

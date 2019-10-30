@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\santi\AppData\Local\Temp\testng-eclipse-735758320\testng-customsuite.xml</span>
+                    <span>C:\Users\santi\AppData\Local\Temp\testng-eclipse--1038131598\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods, 1 failed,   2 passed</span>
+                    <span class="method-stats">7 methods, 2 failed,   5 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -100,6 +100,11 @@
                       <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
                     </span>
                     <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.hbt.semillero.servicios.AppTest" hash-for-method="invertirCadenaPU">invertirCadenaPU</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.hbt.semillero.servicios.AppTest" hash-for-method="invertirCadenaPU(pedro, hector)">invertirCadenaPU(pedro, hector)</a> <!-- method navigator-link -->
@@ -114,6 +119,21 @@
                       <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
                     </span>
                     <div class="method-list-content passed suite-Default_suite">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.hbt.semillero.servicios.AppTest" hash-for-method="estadoEnumComprarPosicionPU">estadoEnumComprarPosicionPU</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.hbt.semillero.servicios.AppTest" hash-for-method="estadoEnumNombrePU">estadoEnumNombrePU</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.hbt.semillero.servicios.AppTest" hash-for-method="estadoEnumPosicionPU">estadoEnumPosicionPU</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.hbt.semillero.servicios.AppTest" hash-for-method="invertirCadenaPU(12345, 54321)">invertirCadenaPU(12345, 54321)</a> <!-- method navigator-link -->
@@ -144,6 +164,43 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+                  <a name="invertirCadenaPU">
+                  </a> <!-- invertirCadenaPU -->
+                  <span class="method-name">invertirCadenaPU</span>
+                  <div class="stack-trace">org.testng.internal.reflect.MethodMatcherException: 
+[public void com.hbt.semillero.servicios.AppTest.invertirCadenaPU(java.lang.String,java.lang.String)] has no parameters defined but was found to be using a data provider (either explicitly specified or inherited from class level annotation).
+Data provider mismatch
+Method: invertirCadenaPU([Parameter{index=0, type=java.lang.String, declaredAnnotations=[]}, Parameter{index=1, type=java.lang.String, declaredAnnotations=[]}])
+Arguments: [(java.lang.Integer) 12345,(java.lang.String) 54321]
+	at org.testng.internal.reflect.DataProviderMethodMatcher.getConformingArguments(DataProviderMethodMatcher.java:43)
+	at org.testng.internal.Parameters.injectParameters(Parameters.java:925)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:34)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at org.testng.TestRunner.privateRun(TestRunner.java:770)
+	at org.testng.TestRunner.run(TestRunner.java:591)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+	at org.testng.TestNG.runSuites(TestNG.java:1032)
+	at org.testng.TestNG.run(TestNG.java:1000)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="invertirCadenaPU(pedro, hector)">
                   </a> <!-- invertirCadenaPU(pedro, hector) -->
                   <span class="method-name">invertirCadenaPU</span>
@@ -154,7 +211,7 @@
 	at org.testng.Assert.assertEquals(Assert.java:118)
 	at org.testng.Assert.assertEquals(Assert.java:575)
 	at org.testng.Assert.assertEquals(Assert.java:585)
-	at com.hbt.semillero.servicios.AppTest.invertirCadenaPU(AppTest.java:47)
+	at com.hbt.semillero.servicios.AppTest.invertirCadenaPU(AppTest.java:58)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -197,6 +254,27 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+                  <a name="estadoEnumComprarPosicionPU">
+                  </a> <!-- estadoEnumComprarPosicionPU -->
+                  <span class="method-name">estadoEnumComprarPosicionPU</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="estadoEnumNombrePU">
+                  </a> <!-- estadoEnumNombrePU -->
+                  <span class="method-name">estadoEnumNombrePU</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="estadoEnumPosicionPU">
+                  </a> <!-- estadoEnumPosicionPU -->
+                  <span class="method-name">estadoEnumPosicionPU</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="invertirCadenaPU(12345, 54321)">
                   </a> <!-- invertirCadenaPU(12345, 54321) -->
                   <span class="method-name">invertirCadenaPU</span>
@@ -216,7 +294,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\santi\AppData\Local\Temp\testng-eclipse-735758320\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\santi\AppData\Local\Temp\testng-eclipse--1038131598\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -265,24 +343,40 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(7);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'invertirCadenaPU')
 data.setCell(0, 2, 'com.hbt.semillero.servicios.AppTest')
-data.setCell(0, 3, 16);
+data.setCell(0, 3, 31);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'invertirCadenaPU')
+data.setCell(1, 1, 'estadoEnumComprarPosicionPU')
 data.setCell(1, 2, 'com.hbt.semillero.servicios.AppTest')
-data.setCell(1, 3, 5);
+data.setCell(1, 3, 11);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'invertirCadenaPU')
 data.setCell(2, 2, 'com.hbt.semillero.servicios.AppTest')
-data.setCell(2, 3, 5);
+data.setCell(2, 3, 4);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'invertirCadenaPU')
+data.setCell(3, 2, 'com.hbt.semillero.servicios.AppTest')
+data.setCell(3, 3, 3);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'invertirCadenaPU')
+data.setCell(4, 2, 'com.hbt.semillero.servicios.AppTest')
+data.setCell(4, 3, 2);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'estadoEnumNombrePU')
+data.setCell(5, 2, 'com.hbt.semillero.servicios.AppTest')
+data.setCell(5, 3, 2);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'estadoEnumPosicionPU')
+data.setCell(6, 2, 'com.hbt.semillero.servicios.AppTest')
+data.setCell(6, 3, 2);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 26 ms</span>
+              <span class="suite-total-time">Total running time: 55 ms</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -309,19 +403,35 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">com.hbt.semillero.servicios.AppTest</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">beforeTest</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="test-method">
+                <span class="method-name">estadoEnumComprarPosicionPU</span>
+                <span class="method-start">42 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">estadoEnumNombrePU</span>
+                <span class="method-start">58 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">estadoEnumPosicionPU</span>
+                <span class="method-start">63 ms</span>
+              </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">invertirCadenaPU(santiago, ogaitnas)</span>
-                <span class="method-start">0 ms</span>
+                <span class="method-start">77 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">invertirCadenaPU(pedro, hector)</span>
-                <span class="method-start">21 ms</span>
+                <span class="method-start">83 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">invertirCadenaPU(12345, 54321)</span>
-                <span class="method-start">35 ms</span>
+                <span class="method-start">93 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

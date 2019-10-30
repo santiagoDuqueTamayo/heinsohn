@@ -1,14 +1,24 @@
 package com.hbt.semillero.servicios;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import com.hbt.semillero.entidades.EstadoEnum;
 
 
 public class AppTest {
 
 	public final static String INVERTIRCADENA_DATA_PROVIDER = "invertirCadenaDataProvider";
-
+	
+	EstadoEnum estadoEnumActivo;
+	EstadoEnum estadoEnumInactivo;
+	@BeforeTest
+	public void beforeTest() {
+		estadoEnumActivo=EstadoEnum.ACTIVO;
+		estadoEnumInactivo=EstadoEnum.INACTIVO;
+	}
 	
 	 @DataProvider(name= INVERTIRCADENA_DATA_PROVIDER)
 	    public static Object[][] invertirCadenaProovedor() {
@@ -51,4 +61,19 @@ public class AppTest {
 	/**
 	 * Pediente hacer un método que use el método ToString de la entidad COMIC
 	 */
+	@Test
+	public void estadoEnumNombrePU() {
+		Assert.assertEquals(estadoEnumActivo.name(), "ACTIVO");
+		
+	}
+	
+	@Test
+	public void estadoEnumPosicionPU(){
+		Assert.assertEquals(estadoEnumActivo.ordinal(), 0);
+	}
+	//TODO Averiguar por qué bota -1
+	@Test
+	public void estadoEnumComprarPosicionPU(){
+		Assert.assertEquals(estadoEnumActivo.compareTo(estadoEnumInactivo), -1);
+	}
 }
