@@ -13,8 +13,17 @@ import { Component } from "@angular/core";
 })
 
 export class DatosComponent{
+     /**
+     * Atributo que contendra el nombre del aprendiz
+     */
     nombre="Santiago Duque Tamayo";
+    /**
+     * Atributo que contendra la ciudad del aprendiz
+     */
     ciudad="Armenia-Quindío";
+    /**
+     * Atributo que contendra una concatenacion del nombre con la ciudad
+     */
     concatenacionNomCiu=this.nombre.concat(", ").concat(this.ciudad);
 
 }
