@@ -13,6 +13,8 @@ import { Component } from "@angular/core";
 })
 
 export class datosComponent{
-    
+    nombre="Santiago Duque Tamayo";
+    ciudad="Armenia-Quindío";
+    concatenacionNomCiu=this.nombre.concat(", Ciudad:").concat(this.ciudad);
 }
 
