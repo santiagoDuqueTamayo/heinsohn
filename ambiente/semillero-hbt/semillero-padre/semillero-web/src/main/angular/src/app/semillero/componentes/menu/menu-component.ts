@@ -43,7 +43,7 @@ export class MenuComponent implements OnInit {
   public navegarHome(): void {
     this.router.navigate(['bienvenida']);
   }
-
+ 
   public navegarGestionarCompra(): void {
     //WIP
   }

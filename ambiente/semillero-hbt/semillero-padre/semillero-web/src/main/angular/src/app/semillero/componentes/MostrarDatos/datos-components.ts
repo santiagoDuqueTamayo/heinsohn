@@ -12,9 +12,10 @@ import { Component } from "@angular/core";
     templateUrl:'./datos-component.html',
 })
 
-export class datosComponent{
+export class DatosComponent{
     nombre="Santiago Duque Tamayo";
     ciudad="Armenia-Quindío";
     concatenacionNomCiu=this.nombre.concat(", ").concat(this.ciudad);
+
 }
 
