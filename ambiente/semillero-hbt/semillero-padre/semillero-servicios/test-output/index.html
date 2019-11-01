@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\santi\AppData\Local\Temp\testng-eclipse-307385932\testng-customsuite.xml</span>
+                    <span>C:\Users\santi\AppData\Local\Temp\testng-eclipse--767742057\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -102,7 +102,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.hbt.semillero.servicios.GestionarComicPOJOTest" hash-for-method="creartComicDTOTest">creartComicDTOTest</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.hbt.semillero.servicios.GestionarComicPOJOTest" hash-for-method="eliminarComic">eliminarComic</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -125,11 +125,12 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="creartComicDTOTest">
-                  </a> <!-- creartComicDTOTest -->
-                  <span class="method-name">creartComicDTOTest</span>
+                  <a name="eliminarComic">
+                  </a> <!-- eliminarComic -->
+                  <span class="method-name">eliminarComic</span>
                   <div class="stack-trace">java.lang.NullPointerException
-	at com.hbt.semillero.servicios.GestionarComicPOJOTest.creartComicDTOTest(GestionarComicPOJOTest.java:66)
+	at com.hbt.semillero.pojo.GestionarComicPOJO.buscarElemento(GestionarComicPOJO.java:133)
+	at com.hbt.semillero.servicios.GestionarComicPOJOTest.eliminarComic(GestionarComicPOJOTest.java:106)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -167,7 +168,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\santi\AppData\Local\Temp\testng-eclipse-307385932\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\santi\AppData\Local\Temp\testng-eclipse--767742057\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -218,14 +219,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'creartComicDTOTest')
+data.setCell(0, 1, 'eliminarComic')
 data.setCell(0, 2, 'com.hbt.semillero.servicios.GestionarComicPOJOTest')
-data.setCell(0, 3, 53);
+data.setCell(0, 3, 14);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 53 ms</span>
+              <span class="suite-total-time">Total running time: 14 ms</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -240,12 +241,14 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">1 ignored method</span>
+            <span class="header-content">2 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
               <span class="ignored-class-name">com.hbt.semillero.servicios.GestionarComicPOJOTest</span>
               <div class="ignored-methods-div">
+                <span class="ignored-method-name">creartComicDTOTest</span>
+                <br/>
                 <span class="ignored-method-name">crearComicDTOTest</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
@@ -259,11 +262,15 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">com.hbt.semillero.servicios.GestionarComicPOJOTest</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">before</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-test before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">creartComicDTOTest</span>
-                <span class="method-start">0 ms</span>
+                <span class="method-name">eliminarComic</span>
+                <span class="method-start">135 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

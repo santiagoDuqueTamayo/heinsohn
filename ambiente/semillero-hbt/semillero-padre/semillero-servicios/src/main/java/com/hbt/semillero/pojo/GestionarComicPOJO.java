@@ -114,18 +114,30 @@ public void modificarComicDTO(String id, String nombre) {
  * @param id
  */
 public void eliminarComic(String id) {
-	if (!listaComics.isEmpty()) {
+	listaComics.remove(buscarElemento(id));
+}
+/**
+ * 
+ * Metodo encargado de buscar un elemento por su id
+ * <b>Caso de Uso</b>
+ * @author santi
+ * 
+ * @param id
+ * @return
+ */
+public int buscarElemento(String id) {
+	
 		ComicDTO comicDTO=new ComicDTO(); 
 		boolean comicEncontrado=false;
 		int i=0;
-		while (comicEncontrado==false) {
+		while (i<=listaComics.size()&&comicEncontrado==false) {
 			if (listaComics.get(i).getId().equals(id)) {
 				comicEncontrado=true;
-				listaComics.remove(i);
+				return i;
 			}
 			i++;
-		}
-	}
+		} 
+		return -1;
 }
 
 	/**

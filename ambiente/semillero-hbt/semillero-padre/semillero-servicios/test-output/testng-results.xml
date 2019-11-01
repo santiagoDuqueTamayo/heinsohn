@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="1" total="2" passed="0">
+<testng-results skipped="0" failed="1" ignored="2" total="3" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="134" started-at="2019-11-01T09:43:50 EST" finished-at="2019-11-01T09:43:50 EST">
+  <suite name="Default suite" duration-ms="210" started-at="2019-11-01T10:24:12 EST" finished-at="2019-11-01T10:24:12 EST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="134" started-at="2019-11-01T09:43:50 EST" finished-at="2019-11-01T09:43:50 EST">
+    <test name="Default test" duration-ms="210" started-at="2019-11-01T10:24:12 EST" finished-at="2019-11-01T10:24:12 EST">
       <class name="com.hbt.semillero.servicios.GestionarComicPOJOTest">
-        <test-method status="FAIL" signature="creartComicDTOTest()[pri:0, instance:com.hbt.semillero.servicios.GestionarComicPOJOTest@57536d79]" name="creartComicDTOTest" duration-ms="53" started-at="2019-11-01T09:43:50 EST" finished-at="2019-11-01T09:43:50 EST">
+        <test-method status="PASS" signature="before()[pri:0, instance:com.hbt.semillero.servicios.GestionarComicPOJOTest@1d16f93d]" name="before" is-config="true" duration-ms="56" started-at="2019-11-01T10:24:12 EST" finished-at="2019-11-01T10:24:12 EST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- before -->
+        <test-method status="FAIL" signature="eliminarComic()[pri:0, instance:com.hbt.semillero.servicios.GestionarComicPOJOTest@1d16f93d]" name="eliminarComic" duration-ms="14" started-at="2019-11-01T10:24:12 EST" finished-at="2019-11-01T10:24:12 EST">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException
-at com.hbt.semillero.servicios.GestionarComicPOJOTest.creartComicDTOTest(GestionarComicPOJOTest.java:66)
+at com.hbt.semillero.pojo.GestionarComicPOJO.buscarElemento(GestionarComicPOJO.java:133)
+at com.hbt.semillero.servicios.GestionarComicPOJOTest.eliminarComic(GestionarComicPOJOTest.java:106)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -45,7 +50,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- creartComicDTOTest -->
+        </test-method> <!-- eliminarComic -->
       </class> <!-- com.hbt.semillero.servicios.GestionarComicPOJOTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
