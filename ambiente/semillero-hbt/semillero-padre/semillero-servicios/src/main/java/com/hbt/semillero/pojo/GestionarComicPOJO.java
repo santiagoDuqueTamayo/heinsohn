@@ -24,7 +24,39 @@ public class GestionarComicPOJO {
 	 * atributo que representa una lista de comicsDTO
 	 */
 	private List<ComicDTO> listaComics = null;
+	/**
+	 * 
+	 * Metodo encargado de  crear un comicDto a través de parametros
+	 * <b>Caso de Uso</b>
+	 * @author santi
+	 * 
+	 * @param string
+	 * @param string2
+	 * @param string3
+	 * @param fantastico
+	 * @param string4
+	 * @param i
+	 * @param bigDecimal
+	 * @param string5
+	 * @param false1
+	 * @param now
+	 * @param string6
+	 * @param l
+	 */
+	public ComicDTO crearComicDTO(String id, String nombre, String editorial,
+			TematicaEnum tematica, String coleccion, int numPaginas, BigDecimal precio, String autores, Boolean color,
+			LocalDate fechaDeVenta, EstadoEnum estado, long cantidad) {
+		// TODO Auto-generated method stub
+		ComicDTO comicDTO=new ComicDTO(id,nombre,editorial,tematica,coleccion,numPaginas,precio,color,autores,fechaDeVenta,estado,cantidad);
+		
+		return comicDTO;
+	}
 	
+	public void agregarComicDTOLista(ComicDTO comicDTO) {
+		if (listaComics!=null) {
+			listaComics.add(comicDTO); 
+		}
+	}
 	/**
 	 * 
 	 * Metodo encargado de crear un comicDTO
@@ -53,6 +85,15 @@ public class GestionarComicPOJO {
 		listaComics.add(comicDTO);
 	}
 	
+	/**
+	 * 
+	 * Metodo encargado de modificar el nombre de un elementos
+	 * <b>Caso de Uso</b>
+	 * @author santi
+	 * 
+	 * @param id
+	 * @param nombre
+	 */
 public void modificarComicDTO(String id, String nombre) {
 		
 		ComicDTO comicAModificar = null;
@@ -64,7 +105,28 @@ public void modificarComicDTO(String id, String nombre) {
 			}
 		}
 	}
-	
+/**
+ * 
+ * Metodo encargado de eliminar un elemento por su id
+ * <b>Caso de Uso</b>
+ * @author santi
+ * 
+ * @param id
+ */
+public void eliminarComic(String id) {
+	if (!listaComics.isEmpty()) {
+		ComicDTO comicDTO=new ComicDTO(); 
+		boolean comicEncontrado=false;
+		int i=0;
+		while (comicEncontrado==false) {
+			if (listaComics.get(i).getId().equals(id)) {
+				comicEncontrado=true;
+				listaComics.remove(i);
+			}
+			i++;
+		}
+	}
+}
 
 	/**
 	 * Metodo encargado de retornar el valor del atributo listaComics
@@ -81,6 +143,8 @@ public void modificarComicDTO(String id, String nombre) {
 	public void setListaComics(List<ComicDTO> listaComics) {
 		this.listaComics = listaComics;
 	}
+
+
 	
 	
 }
