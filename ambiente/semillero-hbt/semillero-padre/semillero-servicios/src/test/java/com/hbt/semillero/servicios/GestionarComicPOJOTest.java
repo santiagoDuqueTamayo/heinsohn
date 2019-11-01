@@ -114,6 +114,19 @@ public class GestionarComicPOJOTest {
 		Assert.assertNotEquals(posicionComic, 0);
 		
 	}
+	/**
+	 * 
+	 * Metodo encargado de probar metodo modificarComicDTO de la clase gestionarcomicPOJO 
+	 * <b>Caso de Uso</b>
+	 * @author santi
+	 *
+	 */
+	@Test
+	public void modificarComicDTO() {
+		;
+		gestionarComicPOJO.modificarComicDTO("2", "prueba");
+		Assert.assertEquals(gestionarComicPOJO.getListaComics().get(gestionarComicPOJO.buscarElemento("2")), "prueba");
+	}
 //	
 //	@Test
 //	public void agregarComicDTOLista() {
