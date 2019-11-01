@@ -130,7 +130,7 @@ public int buscarElemento(String id) {
 		ComicDTO comicDTO=new ComicDTO(); 
 		boolean comicEncontrado=false;
 		int i=0;
-		while (i<=listaComics.size()&&comicEncontrado==false) {
+		while (i<listaComics.size()&&comicEncontrado==false) {
 			if (listaComics.get(i).getId().equals(id)) {
 				comicEncontrado=true;
 				return i;

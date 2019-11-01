@@ -45,19 +45,25 @@ public class GestionarComicPOJOTest {
 	 */
 	@BeforeTest
 	public void before() {
+		//inicializamos la variable gestionarComicPOJO
 		gestionarComicPOJO= new GestionarComicPOJO();
+		//Agregamos nuestro primer elemento a la lista
+		gestionarComicPOJO.crearComicDTO();
+		//inicializamos la lista
+		listaComic=gestionarComicPOJO.getListaComics();
+		
+		//Agregamos un elemento nuevo en la pos 1
 		comicDTO = gestionarComicPOJO.crearComicDTO("1", "Flash", "DC",
 				TematicaEnum.CIENCIA_FICCION, "BIBLIOTECA MARVEL", 128, new BigDecimal(2345),
 				" Roger Stern", Boolean.TRUE, LocalDate.now(), EstadoEnum.ACTIVO, 6L);
 		gestionarComicPOJO.agregarComicDTOLista(comicDTO);
+		//Agregamos un elemento nuevo en la pos 2
 		
-		gestionarComicPOJO= new GestionarComicPOJO();
 		comicDTO = gestionarComicPOJO.crearComicDTO("2", "the spectacular spiderman V2-usa	", "planeta Comics",
 				TematicaEnum.CIENCIA_FICCION, "MARVEL COMICS", 208, new BigDecimal(6225),
 				" Straczynski,Deodato Jr.,Barnes,Eaton", Boolean.TRUE, LocalDate.now(), EstadoEnum.INACTIVO, 0L);
 		gestionarComicPOJO.agregarComicDTOLista(comicDTO);
-		creartComicDTOTest();
-		listaComic=gestionarComicPOJO.getListaComics();
+		
 	}
 	
 //	@Test(enabled = false)
@@ -75,7 +81,7 @@ public class GestionarComicPOJOTest {
 	 * @author santi
 	 *
 	 */
-	@Test (enabled=false)
+	@Test 
 	public void creartComicDTOTest() {
 
 		ComicDTO comicDTO = gestionarComicPOJO.crearComicDTO("101", "Captain America Corps 1-5 USA", "Panini Comics",
@@ -85,8 +91,8 @@ public class GestionarComicPOJOTest {
 		gestionarComicPOJO.agregarComicDTOLista(comicDTO);
 
 
-		//Assert.assertTrue(!gestionarComicPOJO.getListaComics().isEmpty());
-		//Assert.assertTrue(gestionarComicPOJO.getListaComics().size()==1);
+		Assert.assertTrue(!listaComic.isEmpty());
+		Assert.assertTrue(listaComic.size()>2);
 
 		comicDTO = new ComicDTO();
 
@@ -105,7 +111,7 @@ public class GestionarComicPOJOTest {
 
 		gestionarComicPOJO.agregarComicDTOLista(comicDTO);
 
-		//Assert.assertTrue(gestionarComicPOJO.getListaComics().size() > 1);
+		
 
 		comicDTO = new ComicDTO();
 
@@ -123,8 +129,8 @@ public class GestionarComicPOJOTest {
 		comicDTO.setCantidad(20L);
 
 		gestionarComicPOJO.agregarComicDTOLista(comicDTO);
-
-		//Assert.assertTrue(gestionarComicPOJO.getListaComics().size() == 3);
+		
+		Assert.assertTrue(listaComic.size()>4);
 	}
 
 	/**
@@ -137,9 +143,9 @@ public class GestionarComicPOJOTest {
 	@Test 
 	public void eliminarComic() {
 		int posicionComic=gestionarComicPOJO.buscarElemento("1");
-		Assert.assertEquals(posicionComic, 0);
+		Assert.assertEquals(posicionComic, 1);
 		gestionarComicPOJO.eliminarComic("1");
-		Assert.assertNotEquals(posicionComic, 0);
+		Assert.assertEquals(gestionarComicPOJO.buscarElemento("1"),-1 );
 		
 	}
 	/**
@@ -151,9 +157,9 @@ public class GestionarComicPOJOTest {
 	 */
 	@Test
 	public void modificarComicDTO() {
-		;
+		
 		gestionarComicPOJO.modificarComicDTO("2", "prueba");
-		Assert.assertEquals(gestionarComicPOJO.getListaComics().get(gestionarComicPOJO.buscarElemento("2")), "prueba");
+		Assert.assertEquals(listaComic.get(gestionarComicPOJO.buscarElemento("2")).getNombre(), "prueba");
 	}
 //	
 //	@Test
