@@ -31,7 +31,7 @@ import {Revista} from '../../ejercicioDeObjetos/Revista';
 
     ngOnInit(): void {
       this.crearObjetos();
-     this.listaRevistas=this.convertirLista();
+      this.convertirLista();
 
     }
     /**
@@ -51,22 +51,73 @@ import {Revista} from '../../ejercicioDeObjetos/Revista';
        objeto1.fechaVenta= new Date("10-10-2019");
        objeto1.estado="activo";
        this.listaObjetos.push(objeto1);
-       console.log(this.listaObjetos[0]);
+
+       let objeto2= this.revista= new Revista();
+       objeto1.id=2;
+       objeto1.nombre="superman";
+       objeto1.editorial= "marvel";
+       objeto1.tematica = "accion";
+       objeto1.numeroPaginas = 75;
+       objeto1.precio = 90,500.99;
+       objeto1.autores = "santiago duque";
+       objeto1.aColor = false;
+       objeto1.fechaVenta= new Date("11-09-2019");
+       objeto1.estado="activo";
+       this.listaObjetos.push(objeto2);
+
+       let objeto3= this.revista= new Revista();
+       objeto1.id=3;
+       objeto1.nombre="spiderman";
+       objeto1.editorial= "dc";
+       objeto1.tematica = "accion";
+       objeto1.numeroPaginas = 40;
+       objeto1.precio = 50,500.99;
+       objeto1.autores = "Diego alvarez";
+       objeto1.aColor = false;
+       objeto1.fechaVenta= new Date("10-10-2019");
+       objeto1.estado="activo";
+       this.listaObjetos.push(objeto3);
+
+       let objeto4= this.revista= new Revista();
+       objeto1.id=4;
+       objeto1.nombre="el inreible hulk";
+       objeto1.editorial= "marvel";
+       objeto1.tematica = "accion";
+       objeto1.numeroPaginas = 95;
+       objeto1.precio = 9,500.99;
+       objeto1.autores = "Carlos villamizar";
+       objeto1.aColor = false;
+       objeto1.fechaVenta= new Date("05-06-2019");
+       objeto1.estado="inactivo";
+       this.listaObjetos.push(objeto4);
+
+       let objeto5= this.revista= new Revista();
+       objeto1.id=5;
+       objeto1.nombre="tom y jerry";
+       objeto1.editorial= "disney";
+       objeto1.tematica = "comedia";
+       objeto1.numeroPaginas = 14;
+       objeto1.precio = 100,500.99;
+       objeto1.autores = "Walt Disney";
+       objeto1.aColor = false;
+       objeto1.fechaVenta= new Date("01-10-2018");
+       objeto1.estado="activo";
+       this.listaObjetos.push(objeto5);
+    
 
     }
     /**
      * metodo que convierte una lista de objetos a una lista de string
      */
-    public convertirLista(): Array<string> {
-      let listaelementos=this.listaObjetos;
-      let element: Array<string>=new Array<string>();
-      let cadena: string;
-      for (let index = 0; index < listaelementos.length; index++) {
-        cadena=JSON.stringify(listaelementos[index]);
-        element.push(cadena);
+    public convertirLista(): void {
+    
+    
+      for (let index = 0; index < this.listaObjetos.length; index++) {
+
+        this.listaRevistas.push(JSON.stringify(this.listaObjetos[index]));
       }
 
-      return element;
+ 
     }
 
   
