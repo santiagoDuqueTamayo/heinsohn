@@ -29,9 +29,16 @@ import {Revista} from '../../ejercicioDeObjetos/Revista';
      */
     public listaRevistas: Array<string>= new Array<string>();
 
+
+    /**
+     * atributo que define el nombre del elemento a ser eliminado
+     */
+    public nombreElementoEliminar:string;
+
     ngOnInit(): void {
       this.crearObjetos();
       this.convertirLista();
+  
 
     }
     /**
@@ -113,12 +120,21 @@ import {Revista} from '../../ejercicioDeObjetos/Revista';
     
       let listaconvertir=this.listaObjetos;
       for (let index = 0; index < listaconvertir.length; index++) {
-        alert(listaconvertir[index].autores);
        this.listaRevistas.push(JSON.stringify(listaconvertir[index]));
       }
 
  
     }
-
+    public eliminarElemento(posicionAEliminar:number): string{
+  
+      if(this.listaObjetos.length>=posicionAEliminar){
+          this.nombreElementoEliminar=this.listaObjetos[posicionAEliminar].nombre.concat("ha sido eliminado correctamente");
+          this.listaObjetos.splice(posicionAEliminar,1);
+          return this.nombreElementoEliminar;
+        }
+       
+          return "en la posicion 3 no existe ningun elemento";
+ 
+    }
   
   }

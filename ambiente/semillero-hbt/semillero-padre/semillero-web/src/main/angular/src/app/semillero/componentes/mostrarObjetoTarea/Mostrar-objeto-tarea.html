@@ -1,3 +1,7 @@
 <p *ngFor="let item of listaRevistas">
     {{item}}
 </p>
+
+<button (click)="eliminarElemento(3)" >Eliminar elemento</button>
+
+<div *ngIf="nombreElementoEliminar!==undefined">{{nombreElementoEliminar}}</div>
