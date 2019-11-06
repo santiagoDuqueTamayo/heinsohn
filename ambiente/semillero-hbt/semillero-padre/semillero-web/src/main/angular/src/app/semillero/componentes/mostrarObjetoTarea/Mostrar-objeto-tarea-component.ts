@@ -24,8 +24,14 @@ import {Revista} from '../../ejercicioDeObjetos/Revista';
      * Arreglo de tipo comic donde seran almacenadas las instancias
      */
     public listaObjetos: Array<Revista>= new Array<Revista>();
+    /**
+     * Arreglo de String con los datos de las revistas a  imprimir
+     */
+    public listaRevistas: Array<string>= new Array<string>();
 
     ngOnInit(): void {
+      this.crearObjetos();
+     this.listaRevistas=this.convertirLista();
 
     }
     /**
@@ -33,7 +39,7 @@ import {Revista} from '../../ejercicioDeObjetos/Revista';
      */
     public crearObjetos() : void{
         
-       let objeto1= this.revista= new Revista;
+       let objeto1= this.revista= new Revista();
        objeto1.id=1;
        objeto1.nombre="batman";
        objeto1.editorial= "marvel";
@@ -45,7 +51,23 @@ import {Revista} from '../../ejercicioDeObjetos/Revista';
        objeto1.fechaVenta= new Date("10-10-2019");
        objeto1.estado="activo";
        this.listaObjetos.push(objeto1);
+       console.log(this.listaObjetos[0]);
 
     }
+    /**
+     * metodo que convierte una lista de objetos a una lista de string
+     */
+    public convertirLista(): Array<string> {
+      let listaelementos=this.listaObjetos;
+      let element: Array<string>=new Array<string>();
+      let cadena: string;
+      for (let index = 0; index < listaelementos.length; index++) {
+        cadena=JSON.stringify(listaelementos[index]);
+        element.push(cadena);
+      }
+
+      return element;
+    }
+
   
   }
