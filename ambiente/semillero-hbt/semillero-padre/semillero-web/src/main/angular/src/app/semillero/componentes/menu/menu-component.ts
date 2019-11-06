@@ -43,7 +43,13 @@ export class MenuComponent implements OnInit {
   public navegarHome(): void {
     this.router.navigate(['bienvenida']);
   }
- 
+   /**
+   * @description Metodo encargado de direccionar al componente MostrarObjetoTarea
+   * @author Santiago Duque <santiagohdt@gmail.com>
+   */
+  public navegarRevista() : void{
+    this.router.navigate(['mostrar-objeto-tarea']);
+  }
   public navegarGestionarCompra(): void {
     //WIP
   }
