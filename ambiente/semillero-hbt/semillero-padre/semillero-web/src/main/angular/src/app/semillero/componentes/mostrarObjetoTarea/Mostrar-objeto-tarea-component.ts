@@ -50,59 +50,59 @@ import {Revista} from '../../ejercicioDeObjetos/Revista';
        objeto1.aColor = true;
        objeto1.fechaVenta= new Date("10-10-2019");
        objeto1.estado="activo";
-       this.listaObjetos.push(objeto1);
 
        let objeto2= this.revista= new Revista();
-       objeto1.id=2;
-       objeto1.nombre="superman";
-       objeto1.editorial= "marvel";
-       objeto1.tematica = "accion";
-       objeto1.numeroPaginas = 75;
-       objeto1.precio = 90,500.99;
-       objeto1.autores = "santiago duque";
-       objeto1.aColor = false;
-       objeto1.fechaVenta= new Date("11-09-2019");
-       objeto1.estado="activo";
-       this.listaObjetos.push(objeto2);
+       objeto2.id=2;
+       objeto2.nombre="superman";
+       objeto2.editorial= "marvel";
+       objeto2.tematica = "accion";
+       objeto2.numeroPaginas = 75;
+       objeto2.precio = 90,500.99;
+       objeto2.autores = "santiago duque";
+       objeto2.aColor = false;
+       objeto2.fechaVenta= new Date("11-09-2019");
+       objeto2.estado="activo";
+    
 
        let objeto3= this.revista= new Revista();
-       objeto1.id=3;
-       objeto1.nombre="spiderman";
-       objeto1.editorial= "dc";
-       objeto1.tematica = "accion";
-       objeto1.numeroPaginas = 40;
-       objeto1.precio = 50,500.99;
-       objeto1.autores = "Diego alvarez";
-       objeto1.aColor = false;
-       objeto1.fechaVenta= new Date("10-10-2019");
-       objeto1.estado="activo";
-       this.listaObjetos.push(objeto3);
+       objeto3.id=3;
+       objeto3.nombre="spiderman";
+       objeto3.editorial= "dc";
+       objeto3.tematica = "accion";
+       objeto3.numeroPaginas = 40;
+       objeto3.precio = 50,500.99;
+       objeto3.autores = "Diego alvarez";
+       objeto3.aColor = false;
+       objeto3.fechaVenta= new Date("10-10-2019");
+       objeto3.estado="activo";
+   
 
        let objeto4= this.revista= new Revista();
-       objeto1.id=4;
-       objeto1.nombre="el inreible hulk";
-       objeto1.editorial= "marvel";
-       objeto1.tematica = "accion";
-       objeto1.numeroPaginas = 95;
-       objeto1.precio = 9,500.99;
-       objeto1.autores = "Carlos villamizar";
-       objeto1.aColor = false;
-       objeto1.fechaVenta= new Date("05-06-2019");
-       objeto1.estado="inactivo";
-       this.listaObjetos.push(objeto4);
+       objeto4.id=4;
+       objeto4.nombre="el inreible hulk";
+       objeto4.editorial= "marvel";
+       objeto4.tematica = "accion";
+       objeto4.numeroPaginas = 95;
+       objeto4.precio = 9,500.99;
+       objeto4.autores = "Carlos villamizar";
+       objeto4.aColor = false;
+       objeto4.fechaVenta= new Date("05-06-2019");
+       objeto4.estado="inactivo";
+      
 
        let objeto5= this.revista= new Revista();
-       objeto1.id=5;
-       objeto1.nombre="tom y jerry";
-       objeto1.editorial= "disney";
-       objeto1.tematica = "comedia";
-       objeto1.numeroPaginas = 14;
-       objeto1.precio = 100,500.99;
-       objeto1.autores = "Walt Disney";
-       objeto1.aColor = false;
-       objeto1.fechaVenta= new Date("01-10-2018");
-       objeto1.estado="activo";
-       this.listaObjetos.push(objeto5);
+       objeto5.id=5;
+       objeto5.nombre="tom y jerry";
+       objeto5.editorial= "disney";
+       objeto5.tematica = "comedia";
+       objeto5.numeroPaginas = 14;
+       objeto5.precio = 100,500.99;
+       objeto5.autores = "Walt Disney";
+       objeto5.aColor = false;
+       objeto5.fechaVenta= new Date("01-10-2018");
+       objeto5.estado="activo";
+       
+       this.listaObjetos.push(objeto1,objeto2,objeto3,objeto4,objeto5);
     
 
     }
@@ -111,10 +111,10 @@ import {Revista} from '../../ejercicioDeObjetos/Revista';
      */
     public convertirLista(): void {
     
-    
-      for (let index = 0; index < this.listaObjetos.length; index++) {
-
-        this.listaRevistas.push(JSON.stringify(this.listaObjetos[index]));
+      let listaconvertir=this.listaObjetos;
+      for (let index = 0; index < listaconvertir.length; index++) {
+        alert(listaconvertir[index].autores);
+       this.listaRevistas.push(JSON.stringify(listaconvertir[index]));
       }
 
  
