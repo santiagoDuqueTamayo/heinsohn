@@ -85,11 +85,18 @@ public class GestionarComicBean implements IGestionarComicLocal{
 		// si encuentra en la bd actualiza, sino inserta
 		em.merge(comicModificar);
 	}
-
+	/**
+	 * 
+	 * @see com.hbt.semillero.ejb.IGestionarComicLocal#eliminarComic(java.lang.Long)
+	 */
 	@Override
+	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
 	public void eliminarComic(Long idComic) {
-		// TODO el metodo  eliminar es el primero que debemos hacer para entregar
-		
+		Comic comic;
+		if (consultarComic(idComic.toString())!=null) {
+			comic=convertirComicDTOToComic(consultarComic(idComic.toString()));
+			em.remove(comic);
+		}
 	}
 
 	@Override
