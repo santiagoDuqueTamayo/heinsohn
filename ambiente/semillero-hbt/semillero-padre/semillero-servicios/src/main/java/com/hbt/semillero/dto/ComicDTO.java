@@ -46,8 +46,9 @@ public class ComicDTO implements Serializable{
 	
 	private BigDecimal precio;
 	
-	private boolean color;
+	private Boolean color;
 	
+
 	private String autores;
 	
 	private LocalDate fechaVenta;
@@ -181,6 +182,21 @@ public class ComicDTO implements Serializable{
 
 	public LocalDate getFechaVenta() {
 		return fechaVenta;
+	}
+	
+	/**
+	 * Metodo encargado de retornar el valor del atributo color
+	 * @return El color asociado a la clase
+	 */
+	public Boolean getColor() {
+		return color;
+	}
+	/**
+	 * Metodo encargado de modificar el valor del atributo color
+	 * @param color El nuevo color a modificar.
+	 */
+	public void setColor(Boolean color) {
+		this.color = color;
 	}
 
 	public void setFechaVenta(LocalDate fechaVenta) {
