@@ -3,5 +3,15 @@
 </p>
 
 <button (click)="eliminarElemento(3)" >Eliminar elemento</button>
-
-<div *ngIf="nombreElementoEliminar!==undefined">{{nombreElementoEliminar}}</div>
+    
+   <ng-container *ngIf="esVisible">
+       
+           <div *ngIf="nombreElementoEliminar!==undefined; else error">
+             {{nombreElementoEliminar}}
+           </div>
+       
+       <ng-template #error>
+                <p>{{errorAlEliminar}}</p>
+    
+       </ng-template>
+   </ng-container>

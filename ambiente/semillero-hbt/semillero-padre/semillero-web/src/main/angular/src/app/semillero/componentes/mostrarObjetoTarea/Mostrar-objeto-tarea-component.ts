@@ -14,7 +14,7 @@ import {Revista} from '../../ejercicioDeObjetos/Revista';
  * 
  * @author Santiago Duque Tamayo <santiagohdt@gmail.com>
  */
-  export class MostrarObjetoTarea implements OnInit{
+  export class MostrarObjetoTareaComponent implements OnInit {
     /**
      * atributo que indica una definicion de la clase Comic
      */
@@ -23,32 +23,39 @@ import {Revista} from '../../ejercicioDeObjetos/Revista';
       /**
      * Arreglo de tipo comic donde seran almacenadas las instancias
      */
-    public listaObjetos: Array<Revista>= new Array<Revista>();
+    public listaObjetos: Array<Revista> = new Array<Revista>();
     /**
      * Arreglo de String con los datos de las revistas a  imprimir
      */
-    public listaRevistas: Array<string>= new Array<string>();
+    public listaRevistas: Array<string> = new Array<string>();
 
 
     /**
      * atributo que define el nombre del elemento a ser eliminado
      */
-    public nombreElementoEliminar:string;
+    public nombreElementoEliminar: string;
+
+    /**
+     * atributo que me permite controlar la visibilidad de un contenedor
+     */
+    public esVisible: boolean = false;
+
+    /**
+     * atributo que me ayuda a manejar un mensaje de error
+     */
+    public errorAlEliminar: string;
 
     ngOnInit(): void {
       this.crearObjetos();
       this.convertirLista();
-  
-
     }
     /**
      * metodo que crea los objetos y los agrega a una lista
      */
-    public crearObjetos() : void{
-        
-       let objeto1= this.revista= new Revista();
-       objeto1.id=1;
-       objeto1.nombre="batman";
+    public crearObjetos(): void{  
+       let objeto1 = this.revista= new Revista();
+       objeto1.id = 1;
+       objeto1.nombre = "batman";
        objeto1.editorial= "marvel";
        objeto1.tematica = "accion";
        objeto1.numeroPaginas = 50;
@@ -125,15 +132,16 @@ import {Revista} from '../../ejercicioDeObjetos/Revista';
 
  
     }
-    public eliminarElemento(posicionAEliminar:number): string{
+    public eliminarElemento(posicionAEliminar:number): void{
   
+      this.esVisible=true;
       if(this.listaObjetos.length>=posicionAEliminar){
           this.nombreElementoEliminar=this.listaObjetos[posicionAEliminar].nombre.concat("ha sido eliminado correctamente");
           this.listaObjetos.splice(posicionAEliminar,1);
-          return this.nombreElementoEliminar;
+          this.nombreElementoEliminar;
         }
        
-          return "en la posicion 3 no existe ningun elemento";
+         this.errorAlEliminar="en la posicion 3 no existe ningun elemento";
  
     }
   
