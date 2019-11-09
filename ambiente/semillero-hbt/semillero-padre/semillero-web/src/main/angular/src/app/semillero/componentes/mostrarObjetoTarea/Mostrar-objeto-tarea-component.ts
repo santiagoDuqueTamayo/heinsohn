@@ -33,7 +33,7 @@ import {Revista} from '../../ejercicioDeObjetos/Revista';
     /**
      * atributo que define el nombre del elemento a ser eliminado
      */
-    public nombreElementoEliminar: string;
+    public nombreElementoEliminar: string = " ";
 
     /**
      * atributo que me permite controlar la visibilidad de un contenedor
@@ -44,6 +44,11 @@ import {Revista} from '../../ejercicioDeObjetos/Revista';
      * atributo que me ayuda a manejar un mensaje de error
      */
     public errorAlEliminar: string;
+
+    /**
+     * atributo que me permite ver si se pudo eliminar el elemento
+     */
+    public sePudoEliminar: boolean = false;
 
     ngOnInit(): void {
       this.crearObjetos();
@@ -135,14 +140,17 @@ import {Revista} from '../../ejercicioDeObjetos/Revista';
     public eliminarElemento(posicionAEliminar:number): void{
   
       this.esVisible=true;
-      if(this.listaObjetos.length>=posicionAEliminar){
+      if(this.listaObjetos.length>=posicionAEliminar&&this.listaObjetos[posicionAEliminar]!==undefined){
           this.nombreElementoEliminar=this.listaObjetos[posicionAEliminar].nombre.concat("ha sido eliminado correctamente");
           this.listaObjetos.splice(posicionAEliminar,1);
-          this.nombreElementoEliminar;
+          
+        } else{
+          this.sePudoEliminar = true;
+         this.errorAlEliminar = "en la posicion 3 no existe ningun elemento";
         }
-       
-         this.errorAlEliminar="en la posicion 3 no existe ningun elemento";
- 
+        
+        
+  
     }
   
   }

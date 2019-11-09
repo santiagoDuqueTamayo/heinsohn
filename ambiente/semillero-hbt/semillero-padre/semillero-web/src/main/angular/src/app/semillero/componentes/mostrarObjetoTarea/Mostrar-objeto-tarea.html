@@ -1,17 +1,20 @@
-<p *ngFor="let item of listaRevistas">
-    {{item}}
-</p>
+<div class="contenedor-lista">
+        <ul class="list-group">
+                <li class="list-group-item p-3 mb-2 bg-secondary text-white" *ngFor="let item of listaRevistas">{{item}}</li>
+            </ul>
+        <button (click)="eliminarElemento(3)"  class="btn btn-danger">Eliminar elemento</button>
+</div>
 
-<button (click)="eliminarElemento(3)" >Eliminar elemento</button>
-    
-   <ng-container *ngIf="esVisible">
-       
-           <div *ngIf="nombreElementoEliminar!==undefined; else error">
-             {{nombreElementoEliminar}}
-           </div>
-       
-       <ng-template #error>
-                <p>{{errorAlEliminar}}</p>
-    
-       </ng-template>
-   </ng-container>
+<div class="mensaje-error">
+        <ng-container *ngIf="esVisible">
+
+                <div *ngIf="!sePudoEliminar; else error">
+                  <p class="text-success">{{nombreElementoEliminar}}</p>
+                </div>
+            <ng-template #error>
+                     <p class="text-danger">{{errorAlEliminar}}</p>
+            </ng-template>
+        </ng-container>
+
+</div>
+   
