@@ -1,5 +1,7 @@
 package com.hbt.semillero.servicios;
 
+import static org.testng.Assert.assertEquals;
+
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
@@ -31,6 +33,14 @@ public class AppTest {
 	
 	}
 	
+	@Test
+	public void probarString() {
+		String cadena="hola";
+		String cadena2=new String("hola");
+		if (cadena.equals(cadena2)) {
+			Assert.assertFalse(false);
+		}
+	}
 	/*
 	 * Metodo que permite crear un arreglo de objetos para automatizar
 	 * las pruebas
@@ -150,4 +160,6 @@ public class AppTest {
 		}
 		
 	}
+	
+	
 }

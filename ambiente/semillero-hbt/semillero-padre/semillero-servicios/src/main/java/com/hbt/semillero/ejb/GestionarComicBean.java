@@ -56,7 +56,7 @@ public class GestionarComicBean implements IGestionarComicLocal{
 	
 	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
 	public ComicDTO consultarComic(String idComic) {
-		Comic comic = em.find(Comic.class, idComic);
+		Comic comic = em.find(Comic.class, Long.parseLong(idComic));
 		ComicDTO comicDTO = convertirComicToComicDTO(comic);
 		return comicDTO;
 	}
@@ -137,7 +137,15 @@ public class GestionarComicBean implements IGestionarComicLocal{
         comic.setCantidad(comicDTO.getCantidad());
         return comic;
 	}  
-	
+	/**
+	 * 
+	 * Metodo encargado de convertir un Comic a ComicDTO
+	 * <b>Caso de Uso</b>
+	 * @author santi
+	 * 
+	 * @param comic
+	 * @return
+	 */
 	private ComicDTO convertirComicToComicDTO(Comic comic) {
         ComicDTO comicDTO = new ComicDTO();
         if(comic.getId()!=null) {

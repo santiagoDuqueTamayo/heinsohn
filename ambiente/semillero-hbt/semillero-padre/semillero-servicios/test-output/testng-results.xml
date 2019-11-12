@@ -1,29 +1,172 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="0" failed="2" ignored="0" total="9" passed="7">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="95" started-at="2019-11-01T13:59:27 EST" finished-at="2019-11-01T13:59:27 EST">
+  <suite name="Default suite" duration-ms="129" started-at="2019-11-07T19:26:39 EST" finished-at="2019-11-07T19:26:39 EST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="95" started-at="2019-11-01T13:59:27 EST" finished-at="2019-11-01T13:59:27 EST">
-      <class name="com.hbt.semillero.servicios.GestionarComicPOJOTest">
-        <test-method status="PASS" signature="before()[pri:0, instance:com.hbt.semillero.servicios.GestionarComicPOJOTest@1d16f93d]" name="before" is-config="true" duration-ms="35" started-at="2019-11-01T13:59:27 EST" finished-at="2019-11-01T13:59:27 EST">
+    <test name="Default test" duration-ms="129" started-at="2019-11-07T19:26:39 EST" finished-at="2019-11-07T19:26:39 EST">
+      <class name="com.hbt.semillero.servicios.AppTest">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.hbt.semillero.servicios.AppTest@65e2dbf3]" name="beforeTest" is-config="true" duration-ms="19" started-at="2019-11-07T19:26:39 EST" finished-at="2019-11-07T19:26:39 EST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- before -->
-        <test-method status="PASS" signature="creartComicDTOTest()[pri:0, instance:com.hbt.semillero.servicios.GestionarComicPOJOTest@1d16f93d]" name="creartComicDTOTest" duration-ms="9" started-at="2019-11-01T13:59:27 EST" finished-at="2019-11-01T13:59:27 EST">
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="estadoEnumArrayPU()[pri:0, instance:com.hbt.semillero.servicios.AppTest@65e2dbf3]" name="estadoEnumArrayPU" duration-ms="8" started-at="2019-11-07T19:26:39 EST" finished-at="2019-11-07T19:26:39 EST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- creartComicDTOTest -->
-        <test-method status="PASS" signature="eliminarComic()[pri:0, instance:com.hbt.semillero.servicios.GestionarComicPOJOTest@1d16f93d]" name="eliminarComic" duration-ms="2" started-at="2019-11-01T13:59:27 EST" finished-at="2019-11-01T13:59:27 EST">
+        </test-method> <!-- estadoEnumArrayPU -->
+        <test-method status="PASS" signature="estadoEnumComprarPosicionPU()[pri:0, instance:com.hbt.semillero.servicios.AppTest@65e2dbf3]" name="estadoEnumComprarPosicionPU" duration-ms="3" started-at="2019-11-07T19:26:39 EST" finished-at="2019-11-07T19:26:39 EST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- eliminarComic -->
-        <test-method status="PASS" signature="modificarComicDTO()[pri:0, instance:com.hbt.semillero.servicios.GestionarComicPOJOTest@1d16f93d]" name="modificarComicDTO" duration-ms="1" started-at="2019-11-01T13:59:27 EST" finished-at="2019-11-01T13:59:27 EST">
+        </test-method> <!-- estadoEnumComprarPosicionPU -->
+        <test-method status="PASS" signature="estadoEnumNombrePU()[pri:0, instance:com.hbt.semillero.servicios.AppTest@65e2dbf3]" name="estadoEnumNombrePU" duration-ms="2" started-at="2019-11-07T19:26:39 EST" finished-at="2019-11-07T19:26:39 EST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- modificarComicDTO -->
-      </class> <!-- com.hbt.semillero.servicios.GestionarComicPOJOTest -->
+        </test-method> <!-- estadoEnumNombrePU -->
+        <test-method status="PASS" signature="estadoEnumPosicionPU()[pri:0, instance:com.hbt.semillero.servicios.AppTest@65e2dbf3]" name="estadoEnumPosicionPU" duration-ms="2" started-at="2019-11-07T19:26:39 EST" finished-at="2019-11-07T19:26:39 EST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- estadoEnumPosicionPU -->
+        <test-method status="FAIL" signature="invertirCadenaPU(java.lang.String, java.lang.String)[pri:0, instance:com.hbt.semillero.servicios.AppTest@65e2dbf3]" name="invertirCadenaPU" duration-ms="31" started-at="2019-11-07T19:26:39 EST" data-provider="invertirCadenaDataProvider" finished-at="2019-11-07T19:26:39 EST">
+          <exception class="org.testng.internal.reflect.MethodMatcherException">
+            <message>
+              <![CDATA[
+[public void com.hbt.semillero.servicios.AppTest.invertirCadenaPU(java.lang.String,java.lang.String)] has no parameters defined but was found to be using a data provider (either explicitly specified or inherited from class level annotation).
+Data provider mismatch
+Method: invertirCadenaPU([Parameter{index=0, type=java.lang.String, declaredAnnotations=[]}, Parameter{index=1, type=java.lang.String, declaredAnnotations=[]}])
+Arguments: [(java.lang.Integer) 12345,(java.lang.String) 54321]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.internal.reflect.MethodMatcherException: 
+[public void com.hbt.semillero.servicios.AppTest.invertirCadenaPU(java.lang.String,java.lang.String)] has no parameters defined but was found to be using a data provider (either explicitly specified or inherited from class level annotation).
+Data provider mismatch
+Method: invertirCadenaPU([Parameter{index=0, type=java.lang.String, declaredAnnotations=[]}, Parameter{index=1, type=java.lang.String, declaredAnnotations=[]}])
+Arguments: [(java.lang.Integer) 12345,(java.lang.String) 54321]
+at org.testng.internal.reflect.DataProviderMethodMatcher.getConformingArguments(DataProviderMethodMatcher.java:43)
+at org.testng.internal.Parameters.injectParameters(Parameters.java:925)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:34)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(Unknown Source)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.internal.reflect.MethodMatcherException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invertirCadenaPU -->
+        <test-method status="PASS" signature="invertirCadenaPU(java.lang.String, java.lang.String)[pri:0, instance:com.hbt.semillero.servicios.AppTest@65e2dbf3]" name="invertirCadenaPU" duration-ms="1" started-at="2019-11-07T19:26:39 EST" data-provider="invertirCadenaDataProvider" finished-at="2019-11-07T19:26:39 EST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[santiago]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[ogaitnas]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invertirCadenaPU -->
+        <test-method status="FAIL" signature="invertirCadenaPU(java.lang.String, java.lang.String)[pri:0, instance:com.hbt.semillero.servicios.AppTest@65e2dbf3]" name="invertirCadenaPU" duration-ms="3" started-at="2019-11-07T19:26:39 EST" data-provider="invertirCadenaDataProvider" finished-at="2019-11-07T19:26:39 EST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[pedro]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[hector]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [hector] but found [ordep]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [hector] but found [ordep]
+at org.testng.Assert.fail(Assert.java:97)
+at org.testng.Assert.assertEqualsImpl(Assert.java:136)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:575)
+at org.testng.Assert.assertEquals(Assert.java:585)
+at com.hbt.semillero.servicios.AppTest.invertirCadenaPU(AppTest.java:101)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(Unknown Source)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invertirCadenaPU -->
+        <test-method status="PASS" signature="invertirCadenaPU(java.lang.String, java.lang.String)[pri:0, instance:com.hbt.semillero.servicios.AppTest@65e2dbf3]" name="invertirCadenaPU" duration-ms="2" started-at="2019-11-07T19:26:39 EST" data-provider="invertirCadenaDataProvider" finished-at="2019-11-07T19:26:39 EST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[12345]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[54321]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invertirCadenaPU -->
+        <test-method status="PASS" signature="probarString()[pri:0, instance:com.hbt.semillero.servicios.AppTest@65e2dbf3]" name="probarString" duration-ms="1" started-at="2019-11-07T19:26:39 EST" finished-at="2019-11-07T19:26:39 EST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- probarString -->
+      </class> <!-- com.hbt.semillero.servicios.AppTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

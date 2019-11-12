@@ -34,7 +34,7 @@ public class GestionarComicRest  {
 	
 	@GET
 	@Path("/consultarComic")
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)//convierte el mensaje a JSON
 	public ComicDTO consultarComic(@QueryParam("idComic") Long idComic)  {
 		if (idComic!=null) {
 			return gestionarComicEJB.consultarComic(idComic.toString());
