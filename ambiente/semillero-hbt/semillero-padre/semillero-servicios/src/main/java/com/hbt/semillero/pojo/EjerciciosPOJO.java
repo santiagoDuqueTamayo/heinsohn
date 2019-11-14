@@ -48,7 +48,7 @@ public class EjerciciosPOJO {
 	public void ordenarArreglo(){
 		int [] arreglo=registrarElementos();
 		
-		int a[] = {5,3,2,7,10,1};
+
 	    for (int i = 0; i < arreglo.length; i++) {
 	        for (int j = 0; j < arreglo.length-i-1; j++) {
 	            if(a[j] < a[j+1]){

@@ -24,6 +24,13 @@ public class EjeciciosTest {
 		Assert.assertEquals(ejercicio.determinarPrimo(0), true);
 		
 	}
+	/**
+	 * 
+	 * Metodo encargado de 
+	 * <b>Caso de Uso</b>
+	 * @author santi
+	 *
+	 */
 	@Test
 	public void EjercicioCuatro() {
 		int[] arreglo=ejercicio.registrarElementos();
