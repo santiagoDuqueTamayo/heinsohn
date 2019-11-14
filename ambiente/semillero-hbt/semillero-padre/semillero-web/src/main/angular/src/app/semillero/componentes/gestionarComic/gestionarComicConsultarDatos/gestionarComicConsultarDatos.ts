@@ -19,6 +19,10 @@ export class GCConsultarDatosComponent implements OnInit{
      */
     public gcConsultarDatosForm: FormGroup;
     /**
+     * atributo que representa la tematica de un comic
+     */
+    public tematica= this.activedRouting.snapshot.paramMap.get('tematica');
+    /**
      * 
      * @param router metodo que define el constructor de la clase
      * @param fBC 

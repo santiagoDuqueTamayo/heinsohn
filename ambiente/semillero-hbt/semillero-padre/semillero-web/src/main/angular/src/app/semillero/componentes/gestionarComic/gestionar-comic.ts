@@ -164,6 +164,11 @@ export class GestionarComicComponent implements OnInit {
         this.gestionarComicForm.controls.autores.disable();
         this.gestionarComicForm.controls.color.disable();
     }
+    /**
+     * metodo que permite editar o cerar un comic
+     * @param comic 
+     * @param pos 
+     */
     public editarComic(comic: any, pos: number): void {
         this.gestionarComicForm.get('nombre').statusChanges.subscribe(
             status => {
@@ -171,7 +176,7 @@ export class GestionarComicComponent implements OnInit {
             }
         );
         this.posComicEditar=pos; 
-        this.esEditar=true;
+        this.esEditar = true;
         this.gestionarComicForm.controls.nombre.setValue(comic.nombre);
         this.gestionarComicForm.controls.editorial.setValue(comic.editorial);
         this.gestionarComicForm.controls.tematica.setValue(comic.tematica);

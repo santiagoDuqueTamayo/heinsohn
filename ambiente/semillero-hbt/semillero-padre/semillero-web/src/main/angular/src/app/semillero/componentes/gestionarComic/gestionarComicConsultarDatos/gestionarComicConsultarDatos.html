@@ -20,7 +20,7 @@
                 <div class="form-group">
                     <label for="tematica">Tematica:</label>
                     <select  class="form-control" id="tematica" formControlName="tematica" >
-                        <option selected value="Andean">Andean flamingo</option>
+                            <option [value]="tematica " selected >{{tematica | uppercase }}</option>
                     </select>
                 </div>
             </div>
