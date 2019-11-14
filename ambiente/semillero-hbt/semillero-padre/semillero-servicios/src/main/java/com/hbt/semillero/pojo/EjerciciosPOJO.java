@@ -51,9 +51,9 @@ public class EjerciciosPOJO {
 
 	    for (int i = 0; i < arreglo.length; i++) {
 	        for (int j = 0; j < arreglo.length-i-1; j++) {
-	            if(a[j] < a[j+1]){
+	            if(arreglo[j] < arreglo[j+1]){
 	                int temporal = arreglo[j+1];
-	                arreglo[j+1] = a[j];
+	                arreglo[j+1] = arreglo[j];
 	                arreglo[j] = temporal;
 	            }
 	        }
