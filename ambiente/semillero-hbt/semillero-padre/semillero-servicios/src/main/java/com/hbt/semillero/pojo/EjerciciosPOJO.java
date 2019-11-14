@@ -1,38 +1,109 @@
 package com.hbt.semillero.pojo;
 
 import java.time.LocalDate;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
 import java.util.Scanner;
 
-public class EjerciciosPOJO {
-	
+public class EjerciciosPojo {
+
 	/**
-	 * 	 * me permite ver si un numero es primo
-	 * <b>Caso de Uso</b>
-	 * @author santi
-	 * 
-	 * @param numero
+	 * metodo que nos permite saber si un número ingresado es primo
+	 * tiempo de desarrollo 7 minutos
 	 * @return
 	 */
-	public static boolean determinarPrimo(int numero) {
-		
-			 if (numero%2==0 && numero!=0) {
-					return  true;
-				}
-		
-		 return false;
-		 
+	public static  boolean esPrimo(Integer numero){
+		if (numero%2==0&&numero!=0) {
+			return true;
 		}
-	/**
-	 * metodo que permite validar fecha de nacimiento
-	 */
-	public static int validarFecha(LocalDate fechaNacimiento) {
-		return fechaNacimiento.getYear();
+		return false;
 	}
 	
 	/**
-	 * metodo que permite ingresar elementos
+	 * metodo que me permite establecer si al sumar un numero a una fecha coincide 
+	 * con el año actual.
+	 * Tiempo para realizar el ejercicio 15 minutos
+	 * @param fecha
+	 * @param añosSumar
+	 * @return
+	 */
+	public static boolean retornarAnio(String fecha, Integer añosSumar){
+		LocalDate fechaConvertida = LocalDate.parse(fecha);
+		LocalDate nuevaFecha = fechaConvertida.plusYears(añosSumar);
+		Integer añoActual=LocalDate.now().getYear();
+		if (nuevaFecha.getYear()==añoActual) {
+			return true;
+		}
+		return false;
+	}
+	/**
+	 * metodo que permite gestionar las devueltas de una maquina de dulces
+	 * tiempo de desarrollo 27 minutos
+	 * @param devuelta
+	 * @return
+	 */
+	public static Integer[] generarDevueltas(Integer devuelta){
+		Integer[] monedas={1000,500,200,100,50};
+		Integer[] cantidadMonedas={0,0,0,0,0};
+		int i=0;
+		Integer cantidadPorMoneda;
+		while(devuelta!=0){
+			cantidadPorMoneda=devuelta/monedas[i];
+			cantidadMonedas[i]=cantidadPorMoneda;
+			devuelta-=(monedas[i]*cantidadPorMoneda);
+			i++;
+		}
+		return cantidadMonedas;
+	}
+	
+	/**
+	 * Estructura de la excepcion con throw
+	 * @throws Exception
+	 */
+	public void ohNo()throws Exception{
+		
+		throw new Exception();
+	}
+	/**
+	 * metodo que me permite encontrar secuencia donde cada item represente
+	 * la suma de cada valor eje: 10,11-->secuencia 1,2
+	 * tiempo de desarrollo 35 minutos
+	 * @param tamanoSecuencia
+	 * @return
+	 */
+	public static ArrayList<String> determinarNumeroSecuencia(int tamanoSecuencia){
+		
+		ArrayList<String> secuencia=new ArrayList<String>();
+		secuencia.add("10");
+		for (int i = 2; i < tamanoSecuencia; i++) {
+			secuencia.add(encontrarSumaNumero(i));
+		}
+		return secuencia;
+	}
+	/**
+	 * metodo encargado de determinar que numero cumple la condicion de la suma
+	 * @param numero
+	 * @return
+	 */
+	public static String encontrarSumaNumero(int numero){
+		int numeroUno=0,numeroDos=0;
+		String numeroString="";
+		Boolean continuarCiclo=true;
+		while(continuarCiclo){
+			numeroUno=(int)(Math.random()*10);
+			numeroDos=(int)(Math.random()*10);
+			if ((numeroUno+numeroDos)==numero) {
+				continuarCiclo=false;
+				numeroString+=""+numeroUno+""+numeroDos;
+
+			}
+		}
+		return numeroString;
+	}
+	
+	/**
+	 * metodo que permite registrar los elementos para probar arreglo
+	 * tiempo de desarrollo 18 minutos
+	 * @return
 	 */
 	public static  int[] registrarElementos() {
 		Scanner leerDato= new Scanner(System.in);
@@ -43,14 +114,12 @@ public class EjerciciosPOJO {
 		}
 		return arregloDatos;
 	}
-	
+
 	/**
 	 * metodo que permite ordenar arreglo menor a mayor mediante burbuja
 	 */
-	public void ordenarArreglo(){
+	public static int[] ordenarArreglo(){
 		int [] arreglo=registrarElementos();
-		
-
 	    for (int i = 0; i < arreglo.length; i++) {
 	        for (int j = 0; j < arreglo.length-i-1; j++) {
 	            if(arreglo[j] < arreglo[j+1]){
@@ -60,70 +129,56 @@ public class EjerciciosPOJO {
 	            }
 	        }
 	    }
+	    return arreglo;
 	}
-	
-	
-	public void determinarGanador() {
-		Map<Integer, String> arregloDatos=ingresarResultados ();
-		for (int i = 0; i < array.length; i++) {
-			
-		}
-	}
-	public static Map<Integer, String> ingresarResultados (){
-		Scanner leerDato= new Scanner(System.in);
-		String jugador1="federeer";
-		String jugador2="dominic";
-		Integer resultadoFederer;
-		Integer resultadoDominic;
-		
-		Map<Integer, String> arregloDatos = new HashMap<Integer, String>();
-		for (int i = 0; i < 2; i++) {
-			System.out.println("marque la opcion del ganador"+"\n"+"1. Gano federer"+"\n"+"2.Gano Dominic");
-			if(leerDato.nextInt()==1) {
-				System.out.println("ingrese el marcador del ganador");
-				arregloDatos.put(leerDato.nextInt(), jugador1);
-			}else if(leerDato.nextInt()==2){
-				System.out.println("ingrese el marcador del ganador");
-				arregloDatos.put(leerDato.nextInt(), jugador2);
-			}
-			
-		}
-		return arregloDatos;
-	}
-	
 	/**
-	 * metodo que permite validar devueltas de maquina
+	 * metodo que permite determinar el ganador deun partido de tennis
+	 * tiempo de desarrollo 40 minutos
+	 * @param jugadorUno
+	 * @param jugadorDos
+	 * @return
 	 */
-	public int[] devolver(Integer devuelta) {
-		int monedas[]={1000,500,200,100,50};
-		int cantidadMonedas[]={0,0,0,0,0};
-		cantidadMonedas[0]=devuelta;
-		for(int i=0;i<5;i++){
-		    cantidadMonedas[i]=devuelta/monedas[i];
-		    while(cantidadMonedas[i]>0 && cantidadMonedas[i]!=devuelta-1){
-		        int resultado=devuelta-(monedas[i]*cantidadMonedas[i]);
-		        for(int j=0;j<5;j++){
-		            if(j>i){
-		                cantidadMonedas[j]=resultado/monedas[j];
-		                resultado-=monedas[j]*cantidadMonedas[j];
-		            }
-		            System.out.println(cantidadMonedas[j]+" monedas de "+monedas[j]);
-		        }
-		  
-		        cantidadMonedas[i]--;
-		    }
+	public static String determinarGanadorPartido(String jugadorUno, String jugadorDos){
+		Scanner leerDatos= new Scanner(System.in);
+		Boolean hayGanador=false;
+		int conJugUno=0,conJugDos=0;
+		int conSets=1;
+		Integer resSetJugadorUno=0;
+		Integer resSetJugadorDos=0;
+		while(!hayGanador){
+			System.out.println("Set numero: "+conSets);
+			conSets++;
+			System.out.println("Ingrese los resultados del jugador " +jugadorUno);
+			resSetJugadorUno=leerDatos.nextInt();
+			System.out.println("Ingrese los resultados del jugador "+jugadorDos);
+			resSetJugadorDos=leerDatos.nextInt();
+			System.out.println(determinarGanadorSet(resSetJugadorUno, resSetJugadorDos));
+			if (determinarGanadorSet(resSetJugadorUno, resSetJugadorDos).equals(jugadorUno)) {
+				conJugUno++;
+				if (conJugUno==2&&conJugDos<2) {
+					hayGanador=true;
+					return jugadorUno;
+				}
+			}else {
+				conJugDos++;
+				if (conJugDos==2&&conJugUno<2) {
+					hayGanador=true;
+					return jugadorUno;
+				}
+			}
 		}
-		return cantidadMonedas;
+		return null;
 	}
-	
-
-	public int numeroSecuencia() {
-		String[] arregloNumero= {"23","33","25","80","36"};
-		int composicionNumero1=arregloNumero[arregloNumero.length-1].charAt(0);
-		int composicionNumero2=arregloNumero[arregloNumero.length-1].charAt(1);
-		int resultado=composicionNumero1+composicionNumero2;
-		arregloNumero[arregloNumero.length]=resultado+"";
-		return resultado;
-		
+	/**
+	 * metodo qu permite retornar el jugador ganador deun set
+	 */
+	public static String determinarGanadorSet(int resUno, int resDos){
+		String jugador1="Federer";
+		String jugador2= "Dominic";
+		if (resUno==6) {
+			return jugador1;
+		}else {
+			return jugador2;
+		}
 	}
 }

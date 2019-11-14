@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="3" ignored="0" total="3" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="5967" started-at="2019-11-13T21:30:39 EST" finished-at="2019-11-13T21:30:45 EST">
+  <suite name="Default suite" duration-ms="5726" started-at="2019-11-13T21:37:59 EST" finished-at="2019-11-13T21:38:04 EST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="5967" started-at="2019-11-13T21:30:39 EST" finished-at="2019-11-13T21:30:45 EST">
+    <test name="Default test" duration-ms="5726" started-at="2019-11-13T21:37:59 EST" finished-at="2019-11-13T21:38:04 EST">
       <class name="com.hbt.semillero.servicios.EjeciciosTest">
-        <test-method status="FAIL" signature="EjercicioCuatro()[pri:0, instance:com.hbt.semillero.servicios.EjeciciosTest@3b0143d3]" name="EjercicioCuatro" duration-ms="5890" started-at="2019-11-13T21:30:39 EST" finished-at="2019-11-13T21:30:45 EST">
+        <test-method status="FAIL" signature="EjercicioCuatro()[pri:0, instance:com.hbt.semillero.servicios.EjeciciosTest@3b0143d3]" name="EjercicioCuatro" duration-ms="5650" started-at="2019-11-13T21:37:59 EST" finished-at="2019-11-13T21:38:04 EST">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [-2] but found [1]]]>
@@ -54,14 +54,18 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EjercicioCuatro -->
-        <test-method status="FAIL" signature="ejercicioDies()[pri:0, instance:com.hbt.semillero.servicios.EjeciciosTest@3b0143d3]" name="ejercicioDies" duration-ms="2" started-at="2019-11-13T21:30:45 EST" finished-at="2019-11-13T21:30:45 EST">
-          <exception class="java.lang.ArrayIndexOutOfBoundsException">
+        <test-method status="FAIL" signature="ejercicioDies()[pri:0, instance:com.hbt.semillero.servicios.EjeciciosTest@3b0143d3]" name="ejercicioDies" duration-ms="1" started-at="2019-11-13T21:38:04 EST" finished-at="2019-11-13T21:38:04 EST">
+          <exception class="java.lang.Error">
             <message>
-              <![CDATA[5]]>
+              <![CDATA[Unresolved compilation problem: 
+Syntax error, insert ";" to complete LocalVariableDeclarationStatement
+]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.ArrayIndexOutOfBoundsException: 5
-at com.hbt.semillero.pojo.EjerciciosPOJO.numeroSecuencia(EjerciciosPOJO.java:125)
+              <![CDATA[java.lang.Error: Unresolved compilation problem: 
+Syntax error, insert ";" to complete LocalVariableDeclarationStatement
+
+at com.hbt.semillero.pojo.EjerciciosPOJO.numeroSecuencia(EjerciciosPOJO.java:122)
 at com.hbt.semillero.servicios.EjeciciosTest.ejercicioDies(EjeciciosTest.java:45)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
@@ -93,11 +97,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.ArrayIndexOutOfBoundsException -->
+          </exception> <!-- java.lang.Error -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ejercicioDies -->
-        <test-method status="FAIL" signature="ejercicioTres()[pri:0, instance:com.hbt.semillero.servicios.EjeciciosTest@3b0143d3]" name="ejercicioTres" duration-ms="2" started-at="2019-11-13T21:30:45 EST" finished-at="2019-11-13T21:30:45 EST">
+        <test-method status="FAIL" signature="ejercicioTres()[pri:0, instance:com.hbt.semillero.servicios.EjeciciosTest@3b0143d3]" name="ejercicioTres" duration-ms="3" started-at="2019-11-13T21:38:04 EST" finished-at="2019-11-13T21:38:04 EST">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [true] but found [false]]]>
