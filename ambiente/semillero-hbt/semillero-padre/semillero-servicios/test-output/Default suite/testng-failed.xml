@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.hbt.semillero.servicios.AppTest">
+      <class name="com.hbt.semillero.servicios.EjeciciosTest">
         <methods>
-          <include name="beforeTest"/>
-          <include name="invertirCadenaPU" invocation-numbers="1"/>
+          <include name="EjercicioCuatro"/>
+          <include name="ejercicioTres"/>
         </methods>
-      </class> <!-- com.hbt.semillero.servicios.AppTest -->
+      </class> <!-- com.hbt.semillero.servicios.EjeciciosTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

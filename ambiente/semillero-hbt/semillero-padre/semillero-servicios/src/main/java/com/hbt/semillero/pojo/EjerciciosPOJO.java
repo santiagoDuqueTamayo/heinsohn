@@ -1,5 +1,8 @@
 package com.hbt.semillero.pojo;
 
+import java.time.LocalDate;
+import java.util.Scanner;
+
 public class EjerciciosPOJO {
 	
 	/**
@@ -19,4 +22,41 @@ public class EjerciciosPOJO {
 		 return false;
 		 
 		}
+	/**
+	 * metodo que permite validar fecha de nacimiento
+	 */
+	public static int validarFecha(LocalDate fechaNacimiento) {
+		return fechaNacimiento.getYear();
+	}
+	
+	/**
+	 * metodo que permite ingresar elementos
+	 */
+	public static  int[] registrarElementos() {
+		Scanner leerDato= new Scanner(System.in);
+		int[] arregloDatos= new int[4];
+		for (int i = 0; i < arregloDatos.length; i++) {
+			System.out.println("ingrese el numero de la posicion"+i);
+			arregloDatos[i]=leerDato.nextInt();
+		}
+		return arregloDatos;
+	}
+	
+	/**
+	 * metodo que permite ordenar arreglo menor a mayor mediante burbuja
+	 */
+	public void ordenarArreglo(){
+		int [] arreglo=registrarElementos();
+		
+		int a[] = {5,3,2,7,10,1};
+	    for (int i = 0; i < arreglo.length; i++) {
+	        for (int j = 0; j < arreglo.length-i-1; j++) {
+	            if(a[j] < a[j+1]){
+	                int temporal = arreglo[j+1];
+	                arreglo[j+1] = a[j];
+	                arreglo[j] = temporal;
+	            }
+	        }
+	    }
+	}
 }
