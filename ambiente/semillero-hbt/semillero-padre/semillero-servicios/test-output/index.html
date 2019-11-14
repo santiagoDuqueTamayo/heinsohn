@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\santi\AppData\Local\Temp\testng-eclipse--1633132852\testng-customsuite.xml</span>
+                    <span>C:\Users\santi\AppData\Local\Temp\testng-eclipse--1737312269\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 2 failed,   </span>
+                    <span class="method-stats">3 methods, 3 failed,   </span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -103,6 +103,11 @@
                       <span>
                         <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.hbt.semillero.servicios.EjeciciosTest" hash-for-method="EjercicioCuatro">EjercicioCuatro</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.hbt.semillero.servicios.EjeciciosTest" hash-for-method="ejercicioDies">ejercicioDies</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -133,13 +138,53 @@
                   <a name="EjercicioCuatro">
                   </a> <!-- EjercicioCuatro -->
                   <span class="method-name">EjercicioCuatro</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [-2] but found [50]
+                  <div class="stack-trace">java.lang.AssertionError: expected [-2] but found [1]
 	at org.testng.Assert.fail(Assert.java:97)
 	at org.testng.Assert.assertEqualsImpl(Assert.java:136)
 	at org.testng.Assert.assertEquals(Assert.java:118)
 	at org.testng.Assert.assertEquals(Assert.java:839)
 	at org.testng.Assert.assertEquals(Assert.java:849)
-	at com.hbt.semillero.servicios.EjeciciosTest.EjercicioCuatro(EjeciciosTest.java:30)
+	at com.hbt.semillero.servicios.EjeciciosTest.EjercicioCuatro(EjeciciosTest.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at org.testng.TestRunner.privateRun(TestRunner.java:770)
+	at org.testng.TestRunner.run(TestRunner.java:591)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+	at org.testng.TestNG.runSuites(TestNG.java:1032)
+	at org.testng.TestNG.run(TestNG.java:1000)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="ejercicioDies">
+                  </a> <!-- ejercicioDies -->
+                  <span class="method-name">ejercicioDies</span>
+                  <div class="stack-trace">java.lang.ArrayIndexOutOfBoundsException: 5
+	at com.hbt.semillero.pojo.EjerciciosPOJO.numeroSecuencia(EjerciciosPOJO.java:125)
+	at com.hbt.semillero.servicios.EjeciciosTest.ejercicioDies(EjeciciosTest.java:45)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -221,7 +266,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\santi\AppData\Local\Temp\testng-eclipse--1633132852\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\santi\AppData\Local\Temp\testng-eclipse--1737312269\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -270,20 +315,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'EjercicioCuatro')
 data.setCell(0, 2, 'com.hbt.semillero.servicios.EjeciciosTest')
-data.setCell(0, 3, 17192);
+data.setCell(0, 3, 5890);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'ejercicioTres')
+data.setCell(1, 1, 'ejercicioDies')
 data.setCell(1, 2, 'com.hbt.semillero.servicios.EjeciciosTest')
-data.setCell(1, 3, 1);
+data.setCell(1, 3, 2);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'ejercicioTres')
+data.setCell(2, 2, 'com.hbt.semillero.servicios.EjeciciosTest')
+data.setCell(2, 3, 2);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 17 seconds</span>
+              <span class="suite-total-time">Total running time: 5 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -319,8 +368,14 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
+                <span class="method-name">ejercicioDies</span>
+                <span class="method-start">5897 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">ejercicioTres</span>
-                <span class="method-start">17211 ms</span>
+                <span class="method-start">5903 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

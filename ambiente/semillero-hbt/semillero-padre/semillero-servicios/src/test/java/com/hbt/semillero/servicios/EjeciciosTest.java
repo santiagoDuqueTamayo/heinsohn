@@ -39,6 +39,11 @@ public class EjeciciosTest {
 		Assert.assertEquals(arreglo.length, 4);
 		
 	}
+	
+	@Test
+	public void ejercicioDies() {
+		Assert.assertEquals(ejercicio.numeroSecuencia(),46);
+	}
 
 
 	
