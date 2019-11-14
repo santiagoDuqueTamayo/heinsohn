@@ -71,7 +71,7 @@ public class GestionarComicBean implements IGestionarComicLocal{
 	 * @see com.hbt.semillero.ejb.IGestionarComicLocal#modificarComic(java.lang.Long, java.lang.String, com.hbt.semillero.dto.ComicDTO)
 	 */
 	@Override
-	//@TransactionAttribute(TransactionAttributeType.REQUIRED)
+	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	//TODO Cual es el resultado de llamar a modificarComic
 	public void modificarComic(Long id, String nombre, ComicDTO comicNuevo) {
 		Comic comicModificar;
@@ -90,7 +90,7 @@ public class GestionarComicBean implements IGestionarComicLocal{
 	 * @see com.hbt.semillero.ejb.IGestionarComicLocal#eliminarComic(java.lang.Long)
 	 */
 	@Override
-	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
+	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public void eliminarComic(Long idComic) {
 		Comic comic;
 		if (consultarComic(idComic.toString())!=null) {
