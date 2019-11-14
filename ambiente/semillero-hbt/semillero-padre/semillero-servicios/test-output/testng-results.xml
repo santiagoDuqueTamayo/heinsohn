@@ -2,32 +2,32 @@
 <testng-results skipped="0" failed="2" ignored="0" total="9" passed="7">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="129" started-at="2019-11-07T19:26:39 EST" finished-at="2019-11-07T19:26:39 EST">
+  <suite name="Default suite" duration-ms="138" started-at="2019-11-13T19:19:12 EST" finished-at="2019-11-13T19:19:12 EST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="129" started-at="2019-11-07T19:26:39 EST" finished-at="2019-11-07T19:26:39 EST">
+    <test name="Default test" duration-ms="138" started-at="2019-11-13T19:19:12 EST" finished-at="2019-11-13T19:19:12 EST">
       <class name="com.hbt.semillero.servicios.AppTest">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.hbt.semillero.servicios.AppTest@65e2dbf3]" name="beforeTest" is-config="true" duration-ms="19" started-at="2019-11-07T19:26:39 EST" finished-at="2019-11-07T19:26:39 EST">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.hbt.semillero.servicios.AppTest@65e2dbf3]" name="beforeTest" is-config="true" duration-ms="22" started-at="2019-11-13T19:19:12 EST" finished-at="2019-11-13T19:19:12 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="estadoEnumArrayPU()[pri:0, instance:com.hbt.semillero.servicios.AppTest@65e2dbf3]" name="estadoEnumArrayPU" duration-ms="8" started-at="2019-11-07T19:26:39 EST" finished-at="2019-11-07T19:26:39 EST">
+        <test-method status="PASS" signature="estadoEnumArrayPU()[pri:0, instance:com.hbt.semillero.servicios.AppTest@65e2dbf3]" name="estadoEnumArrayPU" duration-ms="9" started-at="2019-11-13T19:19:12 EST" finished-at="2019-11-13T19:19:12 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- estadoEnumArrayPU -->
-        <test-method status="PASS" signature="estadoEnumComprarPosicionPU()[pri:0, instance:com.hbt.semillero.servicios.AppTest@65e2dbf3]" name="estadoEnumComprarPosicionPU" duration-ms="3" started-at="2019-11-07T19:26:39 EST" finished-at="2019-11-07T19:26:39 EST">
+        <test-method status="PASS" signature="estadoEnumComprarPosicionPU()[pri:0, instance:com.hbt.semillero.servicios.AppTest@65e2dbf3]" name="estadoEnumComprarPosicionPU" duration-ms="2" started-at="2019-11-13T19:19:12 EST" finished-at="2019-11-13T19:19:12 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- estadoEnumComprarPosicionPU -->
-        <test-method status="PASS" signature="estadoEnumNombrePU()[pri:0, instance:com.hbt.semillero.servicios.AppTest@65e2dbf3]" name="estadoEnumNombrePU" duration-ms="2" started-at="2019-11-07T19:26:39 EST" finished-at="2019-11-07T19:26:39 EST">
+        <test-method status="PASS" signature="estadoEnumNombrePU()[pri:0, instance:com.hbt.semillero.servicios.AppTest@65e2dbf3]" name="estadoEnumNombrePU" duration-ms="2" started-at="2019-11-13T19:19:12 EST" finished-at="2019-11-13T19:19:12 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- estadoEnumNombrePU -->
-        <test-method status="PASS" signature="estadoEnumPosicionPU()[pri:0, instance:com.hbt.semillero.servicios.AppTest@65e2dbf3]" name="estadoEnumPosicionPU" duration-ms="2" started-at="2019-11-07T19:26:39 EST" finished-at="2019-11-07T19:26:39 EST">
+        <test-method status="PASS" signature="estadoEnumPosicionPU()[pri:0, instance:com.hbt.semillero.servicios.AppTest@65e2dbf3]" name="estadoEnumPosicionPU" duration-ms="1" started-at="2019-11-13T19:19:12 EST" finished-at="2019-11-13T19:19:12 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- estadoEnumPosicionPU -->
-        <test-method status="FAIL" signature="invertirCadenaPU(java.lang.String, java.lang.String)[pri:0, instance:com.hbt.semillero.servicios.AppTest@65e2dbf3]" name="invertirCadenaPU" duration-ms="31" started-at="2019-11-07T19:26:39 EST" data-provider="invertirCadenaDataProvider" finished-at="2019-11-07T19:26:39 EST">
+        <test-method status="FAIL" signature="invertirCadenaPU(java.lang.String, java.lang.String)[pri:0, instance:com.hbt.semillero.servicios.AppTest@65e2dbf3]" name="invertirCadenaPU" duration-ms="34" started-at="2019-11-13T19:19:12 EST" data-provider="invertirCadenaDataProvider" finished-at="2019-11-13T19:19:12 EST">
           <exception class="org.testng.internal.reflect.MethodMatcherException">
             <message>
               <![CDATA[
@@ -71,7 +71,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invertirCadenaPU -->
-        <test-method status="PASS" signature="invertirCadenaPU(java.lang.String, java.lang.String)[pri:0, instance:com.hbt.semillero.servicios.AppTest@65e2dbf3]" name="invertirCadenaPU" duration-ms="1" started-at="2019-11-07T19:26:39 EST" data-provider="invertirCadenaDataProvider" finished-at="2019-11-07T19:26:39 EST">
+        <test-method status="PASS" signature="invertirCadenaPU(java.lang.String, java.lang.String)[pri:0, instance:com.hbt.semillero.servicios.AppTest@65e2dbf3]" name="invertirCadenaPU" duration-ms="2" started-at="2019-11-13T19:19:12 EST" data-provider="invertirCadenaDataProvider" finished-at="2019-11-13T19:19:12 EST">
           <params>
             <param index="0">
               <value>
@@ -87,7 +87,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invertirCadenaPU -->
-        <test-method status="FAIL" signature="invertirCadenaPU(java.lang.String, java.lang.String)[pri:0, instance:com.hbt.semillero.servicios.AppTest@65e2dbf3]" name="invertirCadenaPU" duration-ms="3" started-at="2019-11-07T19:26:39 EST" data-provider="invertirCadenaDataProvider" finished-at="2019-11-07T19:26:39 EST">
+        <test-method status="FAIL" signature="invertirCadenaPU(java.lang.String, java.lang.String)[pri:0, instance:com.hbt.semillero.servicios.AppTest@65e2dbf3]" name="invertirCadenaPU" duration-ms="3" started-at="2019-11-13T19:19:12 EST" data-provider="invertirCadenaDataProvider" finished-at="2019-11-13T19:19:12 EST">
           <params>
             <param index="0">
               <value>
@@ -146,7 +146,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invertirCadenaPU -->
-        <test-method status="PASS" signature="invertirCadenaPU(java.lang.String, java.lang.String)[pri:0, instance:com.hbt.semillero.servicios.AppTest@65e2dbf3]" name="invertirCadenaPU" duration-ms="2" started-at="2019-11-07T19:26:39 EST" data-provider="invertirCadenaDataProvider" finished-at="2019-11-07T19:26:39 EST">
+        <test-method status="PASS" signature="invertirCadenaPU(java.lang.String, java.lang.String)[pri:0, instance:com.hbt.semillero.servicios.AppTest@65e2dbf3]" name="invertirCadenaPU" duration-ms="2" started-at="2019-11-13T19:19:12 EST" data-provider="invertirCadenaDataProvider" finished-at="2019-11-13T19:19:12 EST">
           <params>
             <param index="0">
               <value>
@@ -162,7 +162,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invertirCadenaPU -->
-        <test-method status="PASS" signature="probarString()[pri:0, instance:com.hbt.semillero.servicios.AppTest@65e2dbf3]" name="probarString" duration-ms="1" started-at="2019-11-07T19:26:39 EST" finished-at="2019-11-07T19:26:39 EST">
+        <test-method status="PASS" signature="probarString()[pri:0, instance:com.hbt.semillero.servicios.AppTest@65e2dbf3]" name="probarString" duration-ms="3" started-at="2019-11-13T19:19:12 EST" finished-at="2019-11-13T19:19:12 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- probarString -->

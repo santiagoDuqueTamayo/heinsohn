@@ -2,10 +2,17 @@ package com.hbt.semillero.pojo;
 
 public class EjerciciosPOJO {
 	
-	private static int[] arreglo ={5,222,0};
-	public static boolean determinarPrimo(int i) {
+	/**
+	 * 	 * me permite ver si un numero es primo
+	 * <b>Caso de Uso</b>
+	 * @author santi
+	 * 
+	 * @param numero
+	 * @return
+	 */
+	public static boolean determinarPrimo(int numero) {
 		
-			 if (arreglo[i]%2==0 && arreglo[i]!=0) {
+			 if (numero%2==0 && numero!=0) {
 					return  true;
 				}
 		
