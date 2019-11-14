@@ -6,7 +6,6 @@
       <class name="com.hbt.semillero.servicios.EjeciciosTest">
         <methods>
           <include name="ejercicioDies"/>
-          <include name="EjercicioCuatro"/>
           <include name="ejercicioTres"/>
         </methods>
       </class> <!-- com.hbt.semillero.servicios.EjeciciosTest -->

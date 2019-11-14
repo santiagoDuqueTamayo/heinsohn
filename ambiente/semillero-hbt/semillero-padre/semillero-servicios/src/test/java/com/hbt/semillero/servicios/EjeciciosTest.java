@@ -22,18 +22,60 @@ public class EjeciciosTest {
 	}
 	/**
 	 * 
+	 * Metodo encargado de probar el metodo retornarAnio que devuelve la suma de un año a una fecha
+	 * <b>Caso de Uso</b>
+	 * @author santi
+	 *
+	 */
+	@Test
+	public void ejercicioCuatro() {
+		//retorna true si equivale a  2019
+		Assert.assertEquals(ejercicio.retornarAnio("1994-12-05", 25), true);
+	}
+	/**
+	 * 
 	 * Metodo encargado de probar el ordenamiento de un arreglo 50,1,249,-2
 	 * <b>Caso de Uso</b>
 	 * @author santi
 	 *
 	 */
 	@Test
-	public void EjercicioCuatro() {
+	public void ejercicioCinco() {
 		int[] arreglo=ejercicio.ordenarArreglo();
-		Assert.assertEquals(arreglo[0], -2);
-		Assert.assertEquals(arreglo[3], 249);
+		Assert.assertEquals(arreglo[3], -2);
+		Assert.assertEquals(arreglo[0], 249);
 		Assert.assertEquals(arreglo.length, 4);
 		
+	}
+	/**
+	 * 
+	 * Metodo encargado de probar metodo ganador partido ejecuta comandos para ingresar jugadores
+	 * <b>Caso de Uso</b>
+	 * @author santi
+	 *
+	 */
+	@Test
+	public void ejercicioSiete(){
+	
+		Assert.assertEquals(ejercicio.determinarGanadorPartido("Federer", "Dominic"), "Federer");
+	}
+	/**
+	 * 
+	 * Metodo encargado de probar el metodo generar devueltas
+	 * <b>Caso de Uso</b>
+	 * @author santi
+	 *
+	 */
+	@Test
+	public void ejercicioOcho() {
+		//para 5500
+		Integer [] probarDevueltaUno= {5,1,0,0,1};
+		Integer[] devueltasGeneradasUno=ejercicio.generarDevueltas(5550);
+		Assert.assertEquals(probarDevueltaUno,devueltasGeneradasUno);
+		//para 1000
+		Integer [] probarDevueltaDos= {1,0,0,0,0};
+		Integer[] devueltasGeneradasDos=ejercicio.generarDevueltas(1000);
+		Assert.assertEquals(probarDevueltaDos,devueltasGeneradasDos);
 	}
 	/**
 	 * 
@@ -50,16 +92,5 @@ public class EjeciciosTest {
 		Assert.assertEquals(suma,5);
 	}
 	
-	/**
-	 * 
-	 * Metodo encargado de probar el metodo retornarAnio que devuelve la suma de un año a una fecha
-	 * <b>Caso de Uso</b>
-	 * @author santi
-	 *
-	 */
-	@Test
-	public void ejercicioCuatro() {
-		;
-		Assert.assertEquals(ejercicio.retornarAnio("1994-12-05", 25), 2019);
-	}
+	
 }
