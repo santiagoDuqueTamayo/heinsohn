@@ -3,6 +3,7 @@ import { ComicDTO } from '../../dto/comic.dto';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { GestionarComicService } from '../../services/gestionar.comic.service';
 
 /**
  * @description Componenete gestionar comic, el cual contiene la logica CRUD
@@ -44,15 +45,14 @@ export class GestionarComicComponent implements OnInit {
     /**
      *Atributo que me permite saber si el dato es para actualizar o crear
      */
-    public esEditar: boolean=false;
+    public esEditar: boolean = false;
     /**
      * @description Este es el constructor del componente GestionarComicComponent
      * @author Diego Fernando Alvarez Silva <dalvarez@heinsohn.com.co>
      */
-    constructor(private fb : FormBuilder,
-        private router : Router) {
+    constructor(private fb: FormBuilder,
+        private router: Router, private gestionarComicService: GestionarComicService) {
             this.crearControles();
-            
     }
 
      /**
@@ -60,10 +60,11 @@ export class GestionarComicComponent implements OnInit {
      * @author Diego Fernando Alvarez Silva <dalvarez@heinsohn.com.co>
      */
     ngOnInit(): void {
-        console.log("Ingreso al al evento oninit");
+      
         this.comic = new ComicDTO();
         this.listaComics = new Array<ComicDTO>();
-        this.llenenarLista();
+        this.consultarComics();
+        this.modificarComic();
     }
     /**
      * metodo que permite crear los controles para el formulario
@@ -83,19 +84,19 @@ export class GestionarComicComponent implements OnInit {
    /**
     * metodo que permite simular una lista con persistencia
     */
-    llenenarLista(): void {
-        let comic1 : ComicDTO = new ComicDTO;
-        comic1.id = '1';
-        comic1.nombre = "prueba 1";
-        comic1.editorial = "Marvel";
-        comic1.tematica = "aventura";
-        comic1.coleccion = "los maravillosos hermanos calvin";
-        comic1.numeroPaginas = 33;
-        comic1.precio = 455;
-        comic1.autores = "los traviesos";
-        comic1.color = true;
-        this.listaComics.push(comic1);
-    }
+    // llenenarLista(): void {
+    //     let comic1 : ComicDTO = new ComicDTO;
+    //     comic1.id = '1';
+    //     comic1.nombre = "prueba 1";
+    //     comic1.editorial = "Marvel";
+    //     comic1.tematica = "aventura";
+    //     comic1.coleccion = "los maravillosos hermanos calvin";
+    //     comic1.numeroPaginas = 33;
+    //     comic1.precio = 455;
+    //     comic1.autores = "los traviesos";
+    //     comic1.color = true;
+    //     this.listaComics.push(comic1);
+    // }
     /**
      * @description Metodo que permite validar el formulario y crear o actulizar un comic
      */
@@ -128,10 +129,38 @@ export class GestionarComicComponent implements OnInit {
             this.comic.autores = comicDTO.autores;
             this.comic.color = comicDTO.color;
             this.listaComics.push(this.comic);
-            this.limpiarFormulario();
-        }
+            this.comic.cantidad = 12;
+  
+            this.gestionarComicService.crearComic(this.comic).subscribe(resultadoDTO => {
+                if(resultadoDTO.exitoso) {
+                    this.consultarComics();
+                    this.limpiarFormulario();
+                }
+                }, error => {
+                    console.log(error);
+                    });
+                this.limpiarFormulario();
+            }
     }
-
+      /**
+     * @description Metodo encargado de consultar los comics existentes
+     * @author Diego Fernando Alvarez Silva <dalvarez@heinsohn.com.co>
+     */
+    public consultarComics(): void {
+        this.gestionarComicService.consultarComics().subscribe(listaComics => {
+            this.listaComics = listaComics;
+        }, error => {
+            console.log(error);
+        });
+    }
+     /**
+     * metodo que permite actualizar un dato en la bd
+     */
+    public modificarComic(){
+        let idComicEnviar=this.listaComics[this.posComicEditar].id;
+        let nombreEnviar=this.listaComics[this.posComicEditar].nombre;
+        this.gestionarComicService.modificarComic(idComicEnviar,nombreEnviar).subscribe();
+    }
     /**
      * Metodo que permite consultar un comic de la tabla y sus detalles e inhabilitar el formulario
      * @param posicion en la lista del comic seleccionado
@@ -151,6 +180,7 @@ export class GestionarComicComponent implements OnInit {
 //        this.gestionarComicForm.controls.color.enable(); para habilitar el campo
 
     }
+   
     /**
      * metodo que permite desHabilitar todos los campos del formularuiio
      */
