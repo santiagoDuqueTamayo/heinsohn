@@ -35,6 +35,10 @@ public class ResultadoDTO implements Serializable {
 		this.mensajeEjecucion = mensajeEjecucion;
 	}
 
+	public ResultadoDTO() {
+		super();
+	}
+
 	/**
 	 * Método que obtiene el valor de la propiedad exitoso
 	 * 

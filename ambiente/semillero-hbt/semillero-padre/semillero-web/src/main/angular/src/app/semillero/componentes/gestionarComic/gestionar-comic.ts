@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { GestionarComicService } from '../../services/gestionar.comic.service';
+import { ResultadoDTO } from '../../dto/resultado.dto';
 
 /**
  * @description Componenete gestionar comic, el cual contiene la logica CRUD
@@ -64,7 +65,7 @@ export class GestionarComicComponent implements OnInit {
         this.comic = new ComicDTO();
         this.listaComics = new Array<ComicDTO>();
         this.consultarComics();
-        this.modificarComic();
+    
     }
     /**
      * metodo que permite crear los controles para el formulario
@@ -105,21 +106,22 @@ export class GestionarComicComponent implements OnInit {
         if (this.gestionarComicForm.invalid) {
             return;
         } else if (this.esEditar === true){
-            this.listaComics[this.posComicEditar].nombre = comicDTO.nombre;
+            /* this.listaComics[this.posComicEditar].nombre = comicDTO.nombre;
             this.listaComics[this.posComicEditar].editorial = comicDTO.editorial;
             this.listaComics[this.posComicEditar].tematica = comicDTO.tematica;
             this.listaComics[this.posComicEditar].coleccion = comicDTO.coleccion;
             this.listaComics[this.posComicEditar].numeroPaginas = comicDTO.numeroPaginas;
             this.listaComics[this.posComicEditar].precio = comicDTO.precio;
             this.listaComics[this.posComicEditar].autores = comicDTO.autores;
-            this.listaComics[this.posComicEditar].color = comicDTO.color;
-            this.limpiarFormulario();
+            this.listaComics[this.posComicEditar].color = comicDTO.color; */
+            var formData: any = new FormData();
+            formData.append("idComic", this.gestionarComicForm.get('nombre').value);
+            formData.append("nombre", this.gestionarComicForm.get('nombre').value);
+            this.modificarComic(formData);
+            
             this.esEditar = false;
         } else {
             this.comic = new ComicDTO();
-            this.idComic = this.listaComics.length;
-            this.idComic++;
-            this.comic.id = this.idComic + "";
             this.comic.nombre = comicDTO.nombre;
             this.comic.editorial = comicDTO.editorial;
             this.comic.tematica = comicDTO.tematica;
@@ -128,7 +130,6 @@ export class GestionarComicComponent implements OnInit {
             this.comic.precio = comicDTO.precio;
             this.comic.autores = comicDTO.autores;
             this.comic.color = comicDTO.color;
-            this.listaComics.push(this.comic);
             this.comic.cantidad = 12;
   
             this.gestionarComicService.crearComic(this.comic).subscribe(resultadoDTO => {
@@ -156,10 +157,16 @@ export class GestionarComicComponent implements OnInit {
      /**
      * metodo que permite actualizar un dato en la bd
      */
-    public modificarComic(){
-        let idComicEnviar=this.listaComics[this.posComicEditar].id;
-        let nombreEnviar=this.listaComics[this.posComicEditar].nombre;
-        this.gestionarComicService.modificarComic(idComicEnviar,nombreEnviar).subscribe();
+    public modificarComic(formData: any){
+        this.gestionarComicService.modificarComic(formData).subscribe(resultadoDTO => {
+            if(resultadoDTO.exitoso){
+                this.consultarComics();
+                
+            }else {
+               alert(resultadoDTO.mensajeEjecucion) ;
+            }
+            this.limpiarFormulario();
+        });
     }
     /**
      * Metodo que permite consultar un comic de la tabla y sus detalles e inhabilitar el formulario
@@ -200,11 +207,6 @@ export class GestionarComicComponent implements OnInit {
      * @param pos 
      */
     public editarComic(comic: any, pos: number): void {
-        this.gestionarComicForm.get('nombre').statusChanges.subscribe(
-            status => {
-            console.log('Username changed:***' + status);
-            }
-        );
         this.posComicEditar=pos; 
         this.esEditar = true;
         this.gestionarComicForm.controls.nombre.setValue(comic.nombre);

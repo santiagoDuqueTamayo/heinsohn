@@ -76,6 +76,7 @@ public class GestionarComicBean implements IGestionarComicLocal{
 	public void modificarComic(Long id, String nombre, ComicDTO comicNuevo) {
 		Comic comicModificar;
 		if (comicNuevo==null) {
+			//ComicDTO comicDTO= new ComicDTO("6", nombre, editorial, tematica, coleccion, numeroPaginas, precio, color, autores, fechaVenta, estado, cantidad)
 //			manejar la entidad , si esta manejada el entity manager puede manejarla
 			comicModificar=em.find(Comic.class, id);
 		} else {

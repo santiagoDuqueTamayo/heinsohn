@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Injector } from "@angular/core";
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/toPromise';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { ComicDTO } from '../dto/comic.dto';
 
 
@@ -44,8 +44,10 @@ export class GestionarComicService {
    * @author Diego Fernando Alvarez Silva <dalvarez@heinsohn.com.co>
    * @param comicDTO contiene la informacion del comic a persistir
    */
-  public modificarComic(idComic: string, nombre: string): Observable<any> {
-    let json={"idComic":idComic, "nombre": nombre};
-    return this.httpClient.post('http://localhost:8085/semillero-servicios/rest/GestionarComic/crear',json);
+  public modificarComic(formData: any): Observable<any> {
+  
+      let idComic:number;
+      let nombre: string;
+    return this.httpClient.post('http://localhost:8085/semillero-servicios/rest/GestionarComic/modificar',idComic=formData.get('idComic'),nombre=formData.get('nombre'));
   }
 }

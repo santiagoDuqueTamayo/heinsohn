@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -106,13 +107,23 @@ public class GestionarComicRest {
 	 * Metodo encargado de modificar el nombre de un comic
 	 * http://localhost:8085/semillero-servicios/rest/GestionarComic/modificar?idComic=1&nombre=nuevonombre
 	 * @param idComic identificador del comic a buscar
-	 * @param nombre nombre nuevo del comic
+	 * @param nombre nombre nuevo del comic8
 	 */
 	@POST
 	@Path("/modificar")
 	@Produces(MediaType.APPLICATION_JSON)
-	public void modificarComic(@QueryParam("idComic") Long idComic, @QueryParam("nombre") String nombre) {
-		gestionarComicEJB.modificarComic(idComic, nombre, null);
+	public ResultadoDTO modificarComic(@QueryParam("idComic") String idComic, @QueryParam("nombre") String nombre) {
+		//Long.parseLong(idComic)
+		ResultadoDTO mensaje=new ResultadoDTO();
+		try {
+		gestionarComicEJB.modificarComic(Long.parseLong(idComic), nombre, null);
+		mensaje.setExitoso(Boolean.TRUE);
+		mensaje.setMensajeEjecucion("Comic modificado con exito");
+		}catch (NumberFormatException e){
+			mensaje.setExitoso(Boolean.FALSE);
+			mensaje.setMensajeEjecucion("problema al intentar modificar el comic"+e);
+		}
+		return mensaje;
 	}
 
 	/**
@@ -123,7 +134,6 @@ public class GestionarComicRest {
 	 */
 	@POST
 	@Path("/eliminar")
-	@Produces(MediaType.APPLICATION_JSON)
 	public void eliminarComic(@QueryParam("idComic") Long idComic) {
 		if (idComic != null) {
 			ComicDTO comicDTO = gestionarComicEJB.consultarComic(idComic.toString());
