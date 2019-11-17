@@ -88,7 +88,8 @@ export class GestionarAfiliadoComponent implements OnInit {
   
 
           this.gestionarAfiliadoService.crearAfiliado(this.afiliadoDTO).subscribe(resultadoDTO => {
-              if(resultadoDTO.exitoso) {
+            alert(JSON.stringify(resultadoDTO));
+            if(resultadoDTO.exitoso) {
                   this.consultarAfiliados();
                   this.limpiarFormulario();
               }
@@ -105,6 +106,7 @@ export class GestionarAfiliadoComponent implements OnInit {
     public consultarAfiliados(): void {
       this.gestionarAfiliadoService.consultarAfiliados().subscribe(listaAfiliados => {
           this.listaAfiliados = listaAfiliados;
+          alert(JSON.stringify(this.listaAfiliados));
       }, error => {
           console.log(error);
       });

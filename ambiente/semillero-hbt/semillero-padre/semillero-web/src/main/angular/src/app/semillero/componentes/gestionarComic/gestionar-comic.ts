@@ -133,6 +133,7 @@ export class GestionarComicComponent implements OnInit {
             this.comic.cantidad = 12;
   
             this.gestionarComicService.crearComic(this.comic).subscribe(resultadoDTO => {
+               
                 if(resultadoDTO.exitoso) {
                     this.consultarComics();
                     this.limpiarFormulario();
@@ -150,6 +151,7 @@ export class GestionarComicComponent implements OnInit {
     public consultarComics(): void {
         this.gestionarComicService.consultarComics().subscribe(listaComics => {
             this.listaComics = listaComics;
+            alert(JSON.stringify(listaComics));
         }, error => {
             console.log(error);
         });

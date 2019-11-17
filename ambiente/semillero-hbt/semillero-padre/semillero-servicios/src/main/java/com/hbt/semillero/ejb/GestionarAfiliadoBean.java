@@ -129,9 +129,11 @@ public class GestionarAfiliadoBean implements IGestionarAfiliadoBean{
 	 * @see com.hbt.semillero.ejb.IGestionarAfiliadoLocal#consultarAfiliado(com.hbt.semillero.dto.AfiliadoTO)
 	 */
 	@Override
+	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
 	public List<AfiliadoDTO> consultarAfiliados() {
 		List<AfiliadoDTO> resultadosAfiliadoDTO=new ArrayList<AfiliadoDTO>();
 		List<Afiliado> resultados= em.createQuery("select a from Afiliado a").getResultList();
+		
 		for ( Afiliado afiliado: resultados) {
 			resultadosAfiliadoDTO.add(convertirAfiliadoToAfiliadoDTO(afiliado));
 		}
@@ -150,16 +152,16 @@ public class GestionarAfiliadoBean implements IGestionarAfiliadoBean{
 				afiliadoDTO.setNombre(afiliado.getNombre());
 				afiliadoDTO.setPass(afiliado.getPass());
 				afiliadoDTO.setCorreo(afiliado.getCorreo());
-				return afiliadoDTO;
+				
+			} else {
+				return null;
 			}
 			
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
-		} finally {
-			return null;
-		}
-		
+		} 
+		return afiliadoDTO;
 	}
 	
 	private Afiliado convertirAfiliadoDTOToAfiliado(AfiliadoDTO afiliadoDTO) {
@@ -167,17 +169,18 @@ public class GestionarAfiliadoBean implements IGestionarAfiliadoBean{
 		try {
 			if (afiliadoDTO.getId()!=null) {
 				afiliado.setId(afiliadoDTO.getId());
-				afiliado.setNombre(afiliadoDTO.getNombre());
-				afiliado.setPass(afiliadoDTO.getPass());
-				afiliado.setCorreo(afiliadoDTO.getCorreo());
-				return afiliado;
+			
 			}
+			afiliado.setNombre(afiliadoDTO.getNombre());
+			afiliado.setPass(afiliadoDTO.getPass());
+			afiliado.setCorreo(afiliadoDTO.getCorreo());
 		}catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
-		} finally {
-			return null;
-		}
+			
+		} 
+		return afiliado;
+		
 	}
 
 }

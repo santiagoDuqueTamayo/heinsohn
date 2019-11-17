@@ -27,7 +27,7 @@ export class GestionarAfiliadoService {
    * @author Diego Fernando Alvarez Silva <dalvarez@heinsohn.com.co>
    */
   public consultarAfiliados(): Observable<any> {
-    return this.httpClient.get('http://localhost:8085/semillero-servicios/rest/GestionarComic/consultarComics');
+    return this.httpClient.get('http://localhost:8085/semillero-servicios/rest/gestionarAfiliado/consultarAfiliados');
   }
 
   /**
@@ -36,7 +36,7 @@ export class GestionarAfiliadoService {
    * @param comicDTO contiene la informacion del comic a persistir
    */
   public crearAfiliado(afiliadoDTO : AfiliadoDTO): Observable<any> {
-    return this.httpClient.post('http://localhost:8085/semillero-servicios/rest/GestionarComic/crear',afiliadoDTO);
+    return this.httpClient.post('http://localhost:8085/semillero-servicios/rest/gestionarAfiliado/crear',afiliadoDTO);
   }
 
    /**

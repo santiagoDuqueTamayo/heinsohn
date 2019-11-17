@@ -43,9 +43,9 @@ public class GestionarAfiliadoRest {
 	 * @return
 	 */
 	@GET
-	@Path("/consultarComics")
+	@Path("/consultarAfiliados")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<AfiliadoDTO> consultarComic() {
+	public List<AfiliadoDTO> consultarAfiliados() {
 		return gestionarAfiliadoEJB.consultarAfiliados();
 
 	}
