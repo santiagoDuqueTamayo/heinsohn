@@ -35,6 +35,13 @@ export class MenuComponent implements OnInit {
   public navegarGestionarComic(): void {
     this.router.navigate(['gestionar-comic']);
   }
+    /**
+   * @description Metodo encargado de direccionar al componente de gestionar afiliado
+   * @author Diego Fernando Alvarez Silva <dalvarez@heinsohn.com.co>
+   */
+  public navegarGestionarAfiliado(): void {
+    this.router.navigate(['gestionar-afiliado']);
+  }
 
   /**
    * @description Metodo encargado de direccionar al componente de gestionar comic

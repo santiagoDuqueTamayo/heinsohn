@@ -1,0 +1,51 @@
+<div class="contenedor-principal">
+    <div class="contenedor-form">
+        <form [formGroup]="gestionarAfiliadoForm">
+            <div class="form-group">
+            
+            <label for="exampleFormControlInput1">Nombre</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nombre afiliado" formControlName="nombre"
+             [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" maxlength="50">
+          
+                <div *ngIf="submitted && f.nombre.errors">
+                    <span class="text-danger" *ngIf="f.nombre.errors.required">Campo requerido.</span>
+                </div>
+              <label for="exampleInputEmail1">correo</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" formControlName="correo">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" formControlName="pass">
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Acepto terminos y condiciones</label>
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="crearActualizarAfiliado(gestionarAfiliadoForm.value)">Registrar</button>
+          </form>
+    </div>   
+    <div class="contenedor-list" [hidden]="listaComics.length === 0">
+            <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nobre</th>
+                        <th scope="col">Correo</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let afiliado of listaAfiliados;let i=index;">
+                        <th scope="row">{{afiliado.id}}</th>
+                        <td>{{afiliado.nombre}}/td>
+                        <td>{{afiliado.correo}}</td>
+                        <td>
+                                <i class="fas fa-search 2x ml-1" [routerLink]="['/gCConsultarDatos',afiliado]" title="Consultar"></i>
+                                <i class="fas fa-pencil-alt 2x ml-1" (click)="editarAfiliado(afiliado, i)"  title="Editar"></i>
+                                <i class="far fa-times-circle 2x ml-1" (click)="eliminarAfiliado(i)" title="Eliminar"></i>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+    </div>
+</div>

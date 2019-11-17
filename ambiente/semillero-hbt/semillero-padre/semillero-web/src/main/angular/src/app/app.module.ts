@@ -21,6 +21,7 @@ export { ResultadoDTO } from './semillero/dto/resultado.dto';
 
 import {EjemploService} from './semillero/services/ejemplo.service';
 import {AbstractService} from './semillero/services/template.service';
+import { GestionarAfiliadoComponent } from './semillero/componentes/gestionar-afiliado/gestionar-afiliado.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {AbstractService} from './semillero/services/template.service';
     BienvenidaComponent,
     CrearPersonaComponent,
     GestionarComicComponent,
-    GCConsultarDatosComponent
+    GCConsultarDatosComponent,
+    GestionarAfiliadoComponent,
   ],
   imports: [
     BrowserModule,
