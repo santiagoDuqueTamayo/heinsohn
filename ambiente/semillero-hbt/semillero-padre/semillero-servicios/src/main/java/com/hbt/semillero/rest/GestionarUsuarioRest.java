@@ -24,7 +24,7 @@ import com.hbt.semillero.ejb.IGestionarUsuarioBean;
  * @author admin
  *
  */
-@Path("/gestionarUsuario")
+@Path("/GestionarUsuario")
 public class GestionarUsuarioRest {
 
 	
@@ -47,7 +47,7 @@ public class GestionarUsuarioRest {
 	@Path("/consultarUsuarios")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<UsuarioDTO> consultarUsuarios() {
-		return gestionarUsuarioEJB.consultarUsuario();
+		return gestionarUsuarioEJB.consultarUsuarios();
 
 	}
 

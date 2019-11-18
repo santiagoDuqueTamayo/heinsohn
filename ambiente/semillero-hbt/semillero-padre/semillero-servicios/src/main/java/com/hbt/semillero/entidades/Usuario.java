@@ -81,8 +81,8 @@ public class Usuario {
 	 * @return the id
 	 */
 	@Id
-	@SequenceGenerator(allocationSize = 1, name = "USUARIO_SUID_GENERATOR", sequenceName = "SEQ_USUARIOSUID")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "USUARUIO_SUID_GENERATOR")
+	@SequenceGenerator(allocationSize = 1, name = "USUARIO_SUID_GENERATOR", sequenceName = "SEQ_PERSONA")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PERSONA_SPID_GENERATOR")
 	@Column(name = "SUID")
 	public String getId() {
 		return id;

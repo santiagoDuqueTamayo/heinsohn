@@ -65,7 +65,7 @@ export class GestionarAfiliadoComponent implements OnInit {
       });
   }
 
-  /**
+    /**
      * @description Metodo que permite validar el formulario y crear o actulizar un comic
      */
     public crearActualizarAfiliado(afiliadoParam: any): void {

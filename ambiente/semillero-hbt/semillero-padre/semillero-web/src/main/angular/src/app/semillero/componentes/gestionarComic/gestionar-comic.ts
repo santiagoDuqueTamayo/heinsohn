@@ -3,8 +3,9 @@ import { ComicDTO } from '../../dto/comic.dto';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { GestionarComicService } from '../../services/gestionar.comic.service';
+
 import { ResultadoDTO } from '../../dto/resultado.dto';
+import { GestionarComicService } from '../../services/gestionar.comic.service';
 
 /**
  * @description Componenete gestionar comic, el cual contiene la logica CRUD
