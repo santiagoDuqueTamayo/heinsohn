@@ -118,7 +118,7 @@ export class GestionarUsuarioComponent implements OnInit {
           public consultarUsuarios(): void {
               this.gestionarUsuarioService.consultarUsuarios().subscribe(listaUsuarios => {
                   this.listaUsuarios = listaUsuarios;
-                  alert(JSON.stringify(this.listaUsuarios));
+                  alert(JSON.stringify(listaUsuarios));
               }, error => {
                   console.log(error);
               });
