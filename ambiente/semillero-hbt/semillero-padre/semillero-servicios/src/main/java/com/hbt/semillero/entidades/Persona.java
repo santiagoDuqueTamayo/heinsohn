@@ -3,11 +3,14 @@
  */
 package com.hbt.semillero.entidades;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -35,11 +38,21 @@ public class Persona {
 		 */
 		private String cedula;
 		/**
+		 * atributo que representa la relacion con un usuario
+		 */
+		/**
+		 * atributo que representa la relacion con la tabla usuarios
+		 */
+		@OneToOne(cascade= {CascadeType.ALL})
+		private Usuario ususario;
+		
+		/**
 		 * constructor sin parametros de la clase persona
 		 */
 		public Persona() {
 			super();
 		}
+		//todo definir si usar mappedby para la relacion o solo onetone simple
 		/**
 		 * constructor con los parametros por defecto de la clase persona
 		 * @param id
@@ -65,12 +78,14 @@ public class Persona {
 			return id;
 		}
 		/**
+		 * metodo que permite cambiar el id de una presona
 		 * @param id the id to set
 		 */
 		public void setId(String id) {
 			this.id = id;
 		}
 		/**
+		 * metodo get que permite obtener el nombre d euna presona
 		 * @return the nombre
 		 */
 		@Column(name = "SCNOMBRE")
@@ -78,12 +93,14 @@ public class Persona {
 			return nombre;
 		}
 		/**
+		 * metodo que permite modificar el nombre de una persona
 		 * @param nombre the nombre to set
 		 */
 		public void setNombre(String nombre) {
 			this.nombre = nombre;
 		}
 		/**
+		 * metodo que permite retornar la cedula de una persona
 		 * @return the cedula
 		 */
 		@Column(name = "SCNUMIDENTIFICACION")
@@ -91,10 +108,23 @@ public class Persona {
 			return cedula;
 		}
 		/**
+		 * metodo que permite modificar la ceula deu na persona
 		 * @param cedula the cedula to set
 		 */
 		public void setCedula(String cedula) {
 			this.cedula = cedula;
+		}
+		/**
+		 * @return the ususario
+		 */
+		public Usuario getUsusario() {
+			return ususario;
+		}
+		/**
+		 * @param ususario the ususario to set
+		 */
+		public void setUsusario(Usuario ususario) {
+			this.ususario = ususario;
 		}
 		
 		
