@@ -17,6 +17,8 @@ import com.hbt.semillero.dto.ResultadoDTO;
 @Local
 public interface IGestionarPersonaBean {
 
+	//esta clas eno la necesito de mmento porque persisto en cascada desde usuario
+	//la cree por si decido hacer un cambio a futuro
 	/**
 	 * metodo que me indica como crear una persona y persistirla
 	 */

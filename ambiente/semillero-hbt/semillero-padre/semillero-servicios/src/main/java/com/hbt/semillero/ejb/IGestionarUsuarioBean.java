@@ -67,7 +67,7 @@ public interface IGestionarUsuarioBean {
 	 * 
 	 * @return
 	 */
-	public List<UsuarioDTO> consultarUsuario();
+	public List<UsuarioDTO> consultarUsuarios();
 	
 	/**
 	 * metodo encargado de validar fecha de ingreso

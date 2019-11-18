@@ -10,7 +10,9 @@ import java.io.Serializable;
  *
  */
 public class PersonaDTO implements Serializable{
-
+	
+	//esta clas eno la necesito de mmento porque persisto en cascada desde usuario
+	//la cree por si decido hacer un cambio a futuro
 	
 	/**
 	 * atributo que repsenta el id de la serializacion

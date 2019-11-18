@@ -15,6 +15,9 @@ import com.hbt.semillero.dto.ResultadoDTO;
  */
 public class GestionarPersonaBean implements IGestionarPersonaBean{
 
+	
+	//esta clas eno la necesito de mmento porque persisto en cascada desde usuario
+	//la cree por si decido hacer un cambio a futuro
 	@Override
 	public ResultadoDTO crearPersona(PersonaDTO personaDTO) throws EntityExistsException, IllegalArgumentException {
 		// TODO Auto-generated method stub

@@ -40,11 +40,7 @@ public class Persona {
 		/**
 		 * atributo que representa la relacion con un usuario
 		 */
-		/**
-		 * atributo que representa la relacion con la tabla usuarios
-		 */
-		@OneToOne(cascade= {CascadeType.ALL})
-		private Usuario ususario;
+		
 		
 		/**
 		 * constructor sin parametros de la clase persona
@@ -114,18 +110,7 @@ public class Persona {
 		public void setCedula(String cedula) {
 			this.cedula = cedula;
 		}
-		/**
-		 * @return the ususario
-		 */
-		public Usuario getUsusario() {
-			return ususario;
-		}
-		/**
-		 * @param ususario the ususario to set
-		 */
-		public void setUsusario(Usuario ususario) {
-			this.ususario = ususario;
-		}
+		
 		
 		
 		

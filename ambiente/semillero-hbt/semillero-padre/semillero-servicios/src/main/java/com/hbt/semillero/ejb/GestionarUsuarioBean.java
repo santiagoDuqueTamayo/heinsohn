@@ -6,6 +6,7 @@ package com.hbt.semillero.ejb;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -16,10 +17,13 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import com.hbt.semillero.dto.AfiliadoDTO;
+import com.hbt.semillero.dto.ComicDTO;
+import com.hbt.semillero.dto.UsuarioDTO;
 import com.hbt.semillero.dto.ResultadoDTO;
 import com.hbt.semillero.dto.UsuarioDTO;
 import com.hbt.semillero.entidades.Afiliado;
 import com.hbt.semillero.entidades.Comic;
+import com.hbt.semillero.entidades.Usuario;
 import com.hbt.semillero.entidades.EstadoEnum;
 import com.hbt.semillero.entidades.Usuario;
 
@@ -82,12 +86,12 @@ public class GestionarUsuarioBean implements IGestionarUsuarioBean{
 		Usuario usuarioModificar;
 		try {
 			if (usuarioDTO==null) {
-				//ComicDTO comicDTO= new ComicDTO("6", nombre, editorial, tematica, coleccion, numeroPaginas, precio, color, autores, fechaVenta, estado, cantidad)
+				//UsuarioDTO UsuarioDTO= new UsuarioDTO("6", nombre, editorial, tematica, coleccion, numeroPaginas, precio, color, autores, fechaVenta, estado, cantidad)
 //				manejar la entidad , si esta manejada el entity manager puede manejarla
 				usuarioModificar=em.find(Usuario.class, Long.parseLong(id));
 			} else {
 				usuarioModificar=convertirUsuarioDTOToUsuario(usuarioDTO);
-			}//TODO validar si comicModificar llego con datos
+			}//TODO validar si UsuarioModificar llego con datos
 			usuarioModificar.setNombre(nombre);
 			// si encuentra en la bd actualiza, sino inserta
 			em.merge(usuarioModificar);
@@ -116,16 +120,23 @@ public class GestionarUsuarioBean implements IGestionarUsuarioBean{
 
 	@Override
 	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
-	public UsuarioDTO consultarUsuario(String idAfiliado) {
-		// TODO Auto-generated method stub
-		return null;
+	public UsuarioDTO consultarUsuario(String idUsuario) {
+		Usuario Usuario = em.find(Usuario.class, Long.parseLong(idUsuario));
+		UsuarioDTO UsuarioDTO = convertirUsuarioToUsuarioDTO(Usuario);
+		return UsuarioDTO;
 	}
 
 	@Override
 	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
-	public List<UsuarioDTO> consultarUsuario() {
+	public List<UsuarioDTO> consultarUsuarios() {
 		// TODO Auto-generated method stub
-		return null;
+		List<UsuarioDTO> resultadosComicDTO=new ArrayList<UsuarioDTO>();
+		List<Usuario> resultados= em.createQuery("select u from Tc_usuario u").getResultList();
+		for ( Usuario usuario: resultados) {
+			resultadosComicDTO.add(convertirUsuarioToUsuarioDTO(usuario));
+		}
+		return resultadosComicDTO;
+		
 	}
 
 	@Override

@@ -5,6 +5,7 @@ package com.hbt.semillero.entidades;
 
 import java.time.LocalDate;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -45,7 +46,7 @@ public class Usuario {
 	/**
 	 * atributo que repsenta la relacion de un usuario con una persona
 	 */
-	@OneToOne(mappedBy="usuario", fetch=FetchType.LAZY)
+	@OneToOne(cascade= {CascadeType.ALL})
 	@JoinColumn(name="SUIDPERSONA")
 	private Persona persona;
 	
