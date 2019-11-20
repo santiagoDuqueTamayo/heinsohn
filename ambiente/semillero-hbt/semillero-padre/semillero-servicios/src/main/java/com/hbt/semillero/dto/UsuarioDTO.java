@@ -37,6 +37,10 @@ public class UsuarioDTO implements Serializable{
 	 */
 	private EstadoEnum estado;
 	
+	/**
+	 * atributo que representa una persona 
+	 */
+	private PersonaDTO personaDTO;
 	
 	/**
 	 * Constructor de la clase Usuario vacio
@@ -104,6 +108,20 @@ public class UsuarioDTO implements Serializable{
 	 */
 	public void setId(String id) {
 		this.id = id;
+	}
+	/**
+	 * Metodo encargado de retornar el valor del atributo personaDTO
+	 * @return El personaDTO asociado a la clase
+	 */
+	public PersonaDTO getPersonaDTO() {
+		return personaDTO;
+	}
+	/**
+	 * Metodo encargado de modificar el valor del atributo personaDTO
+	 * @param personaDTO El nuevo personaDTO a modificar.
+	 */
+	public void setPersonaDTO(PersonaDTO personaDTO) {
+		this.personaDTO = personaDTO;
 	}
 	
 	

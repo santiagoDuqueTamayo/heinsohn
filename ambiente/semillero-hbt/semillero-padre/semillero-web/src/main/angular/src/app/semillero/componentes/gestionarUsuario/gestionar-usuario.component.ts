@@ -144,8 +144,8 @@ export class GestionarUsuarioComponent implements OnInit {
      */
           public consultarUsuario(posicion : number) : void {
                     let usuarios = this.listaUsuarios[posicion];
-                    this.f.nombre.setValue(usuarios.nombre);
-                    this.f.cedula.setValue(usuarios.cedula);
+                    this.f.nombre.setValue(usuarios.nombre_auto_generado);
+                    this.f.cedula.setValue(usuarios.personaDTO.cedula);
                     this.f.fecha_creacion.setValue(usuarios.fecha_creacion);
               
                     
