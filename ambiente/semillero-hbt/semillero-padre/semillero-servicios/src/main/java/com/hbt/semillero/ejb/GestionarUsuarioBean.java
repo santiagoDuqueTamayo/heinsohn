@@ -16,15 +16,14 @@ import javax.persistence.EntityExistsException;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import com.hbt.semillero.dto.AfiliadoDTO;
 import com.hbt.semillero.dto.ComicDTO;
 import com.hbt.semillero.dto.UsuarioDTO;
 import com.hbt.semillero.dto.ResultadoDTO;
 import com.hbt.semillero.dto.UsuarioDTO;
-import com.hbt.semillero.entidades.Afiliado;
 import com.hbt.semillero.entidades.Comic;
 import com.hbt.semillero.entidades.Usuario;
 import com.hbt.semillero.entidades.EstadoEnum;
+import com.hbt.semillero.entidades.Persona;
 import com.hbt.semillero.entidades.Usuario;
 
 /**
@@ -55,6 +54,7 @@ public class GestionarUsuarioBean implements IGestionarUsuarioBean{
 			
 			try {
 				usuario=(convertirUsuarioDTOToUsuario(usuarioDTO));
+				usuario.setPersona(crearPersonaAAgregar(usuario));
 				em.persist(usuario);
 				resultadoDTO.setExitoso(true);
 				resultadoDTO.setMensajeEjecucion("se ha creado el usuario correctamente");
@@ -138,7 +138,12 @@ public class GestionarUsuarioBean implements IGestionarUsuarioBean{
 		return resultadosComicDTO;
 		
 	}
-
+	/**
+	 * metodo que permite validar si la fecha ingresada es menor
+	 * que la fecha actual
+	 * @param fecha de creacion del usuario
+	 * @return true si la fecha es valida, false de lo contrario
+	 */
 	@Override
 	public Boolean validarFecha(LocalDate fechaIngresada) {
 		// TODO Auto-generated method stub
@@ -221,6 +226,16 @@ public class GestionarUsuarioBean implements IGestionarUsuarioBean{
 			
 		} 
 		return usuario;
+		
+	}
+	/**
+	 * metodo que permite agregar una persona antes de persistirla
+	 */
+	public Persona crearPersonaAAgregar(Usuario usuario) {
+		Persona persona= new Persona();
+		persona.setCedula(usuario.getPersona().getCedula());
+		persona.setNombre(usuario.getPersona().getNombre());
+		return persona;
 		
 	}
 

@@ -38,7 +38,7 @@
                         <td>{{usuario.nombre}}</td>
                         <td>{{usuario.estado}}</td>
                         <td>
-                                <i class="fas fa-search 2x ml-1"  title="Consultar" [routerLink]="['/gConsultarDatosForm',usuario]"></i>
+                                <i class="fas fa-search 2x ml-1"  title="Consultar" [routerLink]="['/app-consultar-datos-usuario',usuario]"></i>
                                 <i class="fas fa-pencil-alt 2x ml-1" (click)="editarUsuarui(usuario, i)"  title="Editar"></i>
                                 <i class="far fa-times-circle 2x ml-1" (click)="eliminarUsuario(i)" title="Eliminar"></i>
                         </td>
