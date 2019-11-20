@@ -70,9 +70,8 @@ export class GestionarUsuarioComponent implements OnInit {
         crearControles(): void {
           this.gestionarUsuarioForm = this.fb.group({
               nombre : [null,Validators.required],
-              cedula: [null,Validators.email],
-              fecha_creacion: [null,Validators.compose([Validators.required, Validators.maxLength(10),
-                Validators.minLength(3)])]
+              cedula: [null,Validators.required],
+              fecha_creacion: [null,Validators.required]
           });
       }
 
@@ -85,7 +84,7 @@ export class GestionarUsuarioComponent implements OnInit {
           return;
       } else if (this.esEditar === true){
           this.usuarioDTO =  this.listaUsuarios[this.posUsuarioEditar];
-          this.usuarioDTO.nombre = usuarioParam.nombre;
+          this.usuarioDTO.nombre_auto_generado = usuarioParam.nombre;
           this.usuarioDTO.id = usuarioParam.id;
      
           this.modificarUsuario(this.usuarioDTO);
@@ -93,8 +92,8 @@ export class GestionarUsuarioComponent implements OnInit {
           this.esEditar = false;
       } else {
           this.usuarioDTO = new UsuarioDTO();
-          this.usuarioDTO.nombre = usuarioParam.nombre;
-          this.usuarioDTO.cedula = usuarioParam.cedula;
+          this.usuarioDTO.personaDTO.nombre = usuarioParam.nombre;
+          this.usuarioDTO.personaDTO.cedula = usuarioParam.cedula;
           this.usuarioDTO.fecha_creacion = usuarioParam.fecha_creacion;
           this.usuarioDTO.estado = usuarioParam.estado;
 
